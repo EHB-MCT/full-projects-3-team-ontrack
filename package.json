@@ -1,0 +1,20 @@
+{
+  "name": "full-projects-3-team-ontrack",
+  "version": "1.0.0",
+  "description": "SOURCES\r ---------------------------------------------\r Tutorial camera input\r     https://www.youtube.com/watch?v=sL5-FhULalM&list=PL87LyaQLRWpU8C3M7Ez2rp2YoG3Aw78tU&index=1",
+  "main": "cameraInput.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EHB-MCT/full-projects-3-team-ontrack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EHB-MCT/full-projects-3-team-ontrack/issues"
+  },
+  "homepage": "https://github.com/EHB-MCT/full-projects-3-team-ontrack#readme"
+}
