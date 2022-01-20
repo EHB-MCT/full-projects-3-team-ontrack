@@ -38,3 +38,9 @@ body {
 #optionsStart {
     display: none;
 }
+
+#optionsStart p{
+    height: 30vh;
+    margin-top: 2em;
+    padding: auto;
+}

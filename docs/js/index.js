@@ -11,6 +11,17 @@ let index = {
                 document.getElementsByClassName(language)[0].style.display = "inherit";
             }
         })
+        index.chooseOption();
+    },
+    chooseOption() {
+        document.getElementById("optionsStart").addEventListener('click', (e) => {
+            console.log(e.target.id)
+            if (e.target.id == "train") {
+                window.location.href = "html/train/locomotive.html";
+            } else if (e.target.id == "selfie") {
+                window.location.href = "html/selfie/takeSelfie.html";
+            }
+        })
     }
 }
 
