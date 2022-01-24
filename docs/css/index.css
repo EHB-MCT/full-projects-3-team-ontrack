@@ -67,6 +67,7 @@ body {
 
 #header {
     display: none;
+    margin-bottom: 0;
 }
 
 #header img {
@@ -80,5 +81,5 @@ body {
 #imgPlaceholderOptions {
     color: black;
     font-size: 14pt;
-    height: 45vh;
+    height: 50vh;
 }

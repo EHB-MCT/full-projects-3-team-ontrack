@@ -182,9 +182,120 @@ let trainMaker = {
 
         htmlPage.innerHTML = htmlString
 
-        document.getElementById('selectLocomotive').addEventListener('click', (e) =>{
-            this.selectWagon1(htmlPage)
+        document.getElementById('selectWagon1').addEventListener('click', (e) =>{
+            this.selectWagon2(htmlPage)
         })
+    },
+    selectWagon2(htmlPage){
+        let language = localStorage.getItem("language");
+        htmlPage.innerHTML = ``;
+        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_3.png" alt="header 3" >`
+        let htmlString = ``;
+        if (language == "Engels") {
+            htmlString = ` <div id="Engels" class="options">
+            <p>Choose your second wagon</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWagon2">Select</p>
+            </div>
+        </div>`
+        } else if (language == "Nederlands") {
+            htmlString = ` <div id="Nederlands" class="options">
+            <p>Kies jouw tweede wagon</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWagon2">Selecteer</p>
+            </div>
+        </div>`
+        } else if (language == "Frans") {
+            htmlString = ` <div id="Frans" class="options">
+            <p>Choisissez votre deuxième wagon</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWagon2">choisissez</p>
+            </div>
+        </div>`
+        } else if (language == "Duits") {
+            htmlString = ` <div id="Duits" class="options">
+            <p>Wählen Sie Ihren zweiten Waggon</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWagon2">auswählen</p>
+            </div>
+        </div>`
+        }
+
+        htmlPage.innerHTML = htmlString
+
+        document.getElementById('selectWagon2').addEventListener('click', (e) =>{
+            this.selectWheels(htmlPage)
+        })
+    },
+    selectWheels(htmlPage){
+        let language = localStorage.getItem("language");
+        htmlPage.innerHTML = ``;
+        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_4.png" alt="header 4" >`
+        let htmlString = ``;
+        if (language == "Engels") {
+            htmlString = ` <div id="Engels" class="options">
+            <p>Choose your wheels</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWheels">Select</p>
+            </div>
+        </div>`
+        } else if (language == "Nederlands") {
+            htmlString = ` <div id="Nederlands" class="options">
+            <p>Kies jouw wielen</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWheels">Selecteer</p>
+            </div>
+        </div>`
+        } else if (language == "Frans") {
+            htmlString = ` <div id="Frans" class="options">
+            <p>Wählen Sie Ihre Räder</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWheels">choisissez</p>
+            </div>
+        </div>`
+        } else if (language == "Duits") {
+            htmlString = ` <div id="Duits" class="options">
+            <p>Wählen Sie Ihre Räder</p>
+            <div id="imgPlaceholderOptions">
+                <p>image placeholder</p>
+            </div>
+            <div class="buttons" id="startButton">
+                <p id="selectWheels">auswählen</p>
+            </div>
+        </div>`
+        }
+
+        htmlPage.innerHTML = htmlString
+
+        document.getElementById('selectWheels').addEventListener('click', (e) =>{
+            this.confirmPage(htmlPage)
+        })
+    },
+    confirmPage(htmlPage){
+        let language = localStorage.getItem("language");
+        htmlPage.innerHTML = ``;
+        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_5.png" alt="header 5" >`
     }
 }
 
