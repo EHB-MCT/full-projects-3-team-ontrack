@@ -1,3 +1,5 @@
+import { imag } from "@tensorflow/tfjs";
+
 //triangulation metrics
 export const TRIANGULATION = [
     127,
@@ -2641,6 +2643,9 @@ export const TRIANGULATION = [
     448,
     255,
   ];
+
+
+
 // draw triangle
 const drawPath = (ctx, points, closePath) => {
     const region = new Path2D();
@@ -2666,7 +2671,7 @@ export const drawMesh = (predictions, ctx) => {
             const keypoints = prediction.scaledMesh;
            
             //draw triangles 
-            for (let i = 0; i<TRIANGULATION.length / 3; i++){
+     /*        for (let i = 0; i<TRIANGULATION.length / 3; i++){
                 const points = [
                     TRIANGULATION[i*3],
                     TRIANGULATION[i*3+1],
@@ -2674,14 +2679,33 @@ export const drawMesh = (predictions, ctx) => {
                 ].map((index) => keypoints[index]);
                 drawPath(ctx,points, true);
             }
-
+ */
             for (let i = 0; i < keypoints.length; i++){
                 const x = keypoints [i][0];
                 const y = keypoints [i][1];
-                ctx.beginPath();
+                const a = keypoints[0][0];
+                const b = keypoints[0][1];
+        /*         ctx.rect(a-80,b-120, 160,-100); 
+                ctx.stroke();
+                ctx.strokeStyle = "yellow";  */
+
+                const hat = new Image();
+                hat.onload = function () {
+                    ctx.drawImage(hat, a-85, b-205);
+                }
+                hat.src = document.getElementById("image1").src;
+
+                const mask = new Image();
+                mask.onload = function () {
+                    ctx.drawImage(mask, a-75, b-45);
+                }
+                mask.src = document.getElementById("image2").src;
+               
+               /*  ctx.beginPath();
                 ctx.arc(x,y,1,0,3 * Math.PI);
-                ctx.fillStyle = "purple";
-                ctx.fill();
+                ctx.fillStyle = "yellow";
+                ctx.fill(); */
+                
             }
         });
     }
