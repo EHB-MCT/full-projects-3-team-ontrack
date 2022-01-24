@@ -9,12 +9,13 @@ let index = {
             if (language != "languages") {
                 document.getElementById('languages').style.display = "none";
                 document.getElementsByClassName(language)[0].style.display = "inherit";
+                index.chooseOption();
             }
         })
-        index.chooseOption();
+        
     },
     chooseOption() {
-        document.getElementById("optionsStart").addEventListener('click', (e) => {
+        document.getElementsByClassName(language)[0].addEventListener('click', (e) => {
             console.log(e.target.id)
             if (e.target.id == "train") {
                 window.location.href = "html/train/locomotive.html";
