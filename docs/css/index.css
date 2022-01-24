@@ -40,7 +40,7 @@ body {
     display: none;
 }
 
-#optionsStart p{
+#optionsStart p {
     height: 30vh;
     margin-top: 2em;
     padding: auto;
@@ -49,17 +49,36 @@ body {
 /**************
     START
 **************/
-#createTrainPage{
+#createTrainPage {
     text-align: center;
     margin-top: 1.5em;
-}
-
-.startpoint{
-    display: none;
 }
 
 #imgPlaceholder {
     color: black;
     font-size: 14pt;
     height: 60vh;
+}
+
+
+/**************
+    OPTIONS
+**************/
+
+#header {
+    display: none;
+}
+
+#header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
+    width: 70%;
+}
+
+#imgPlaceholderOptions {
+    color: black;
+    font-size: 14pt;
+    height: 45vh;
 }
