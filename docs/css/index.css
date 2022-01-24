@@ -15,7 +15,7 @@
 body {
     background-color: var(--darkblue);
     font-family: 'Rajdhani', sans-serif;
-    font-size: 30pt;
+    font-size: 26pt;
     color: var(--white);
 }
 
@@ -29,6 +29,7 @@ body {
     margin: 1em auto;
     text-align: center;
     border-radius: 15pt;
+    box-shadow: 2.4px 2.4px 3.2px var(--orange);
 }
 
 #languages {
@@ -43,4 +44,22 @@ body {
     height: 30vh;
     margin-top: 2em;
     padding: auto;
+}
+
+/**************
+    START
+**************/
+#createTrainPage{
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.startpoint{
+    display: none;
+}
+
+#imgPlaceholder {
+    color: black;
+    font-size: 14pt;
+    height: 60vh;
 }
