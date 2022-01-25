@@ -2,12 +2,22 @@
 
 /** Index.html - Choose language **/
 let index = {
+    pressStart() {
+        document.getElementById('quitButton').style.display = "none"
+        document.getElementById('start').addEventListener('click', (e) => {
+            document.getElementById('startPage').style.display = "none";
+            document.getElementById('quitButton').style.display = "inherit"
+            document.getElementById('languages').style.display = "inherit";
+            this.checkLanguage();
+        })
+    },
     checkLanguage() {
         document.getElementById('languages').addEventListener('click', (e) => {
             localStorage.setItem('language', e.target.id);
             let language = localStorage.getItem("language");
             if (language != "languages") {
-                window.location.href = "html/startTrain.html";
+                document.getElementById('languages').style.display = "none";
+                document.getElementById('name').style.display = "inherit"
             }
         })
 
@@ -455,7 +465,7 @@ let trainMaker = {
         let htmlString = ``
         htmlPage.innerHTML = ``;
         document.getElementById('header').innerHTML = ` <img src="../img/header/header_5.png" alt="header 5" >`
-        if (language == "Engels"){
+        if (language == "Engels") {
             htmlString = ` <div id="Engels" class="preview">
             <p>Preview</p>
             <div id="imgPlaceholderPreview">
@@ -470,7 +480,7 @@ let trainMaker = {
             <p id="cancel">Cancel</p>
             </div>
         </div>`
-        } else if (language == "Nederlands"){
+        } else if (language == "Nederlands") {
             htmlString = ` <div id="Engels" class="preview">
             <p>Preview</p>
             <div id="imgPlaceholderPreview">
@@ -485,7 +495,7 @@ let trainMaker = {
             <p id="cancel">annuleren</p>
             </div>
         </div>`
-        }  else if (language == "Frans"){
+        } else if (language == "Frans") {
             htmlString = ` <div id="Engels" class="preview">
             <p>aperçu</p>
             <div id="imgPlaceholderPreview">
@@ -500,7 +510,7 @@ let trainMaker = {
             <p id="cancel">Annuler</p>
             </div>
         </div>`
-        }else if (language == "Duits"){
+        } else if (language == "Duits") {
             htmlString = ` <div id="Engels" class="preview">
             <p>Vorschau</p>
             <div id="imgPlaceholderPreview">
@@ -553,10 +563,17 @@ let endingOptions = {
 /* Checking the page the user is on */
 let indexpage = document.getElementById("indexPage");
 if (indexpage) {
-    index.checkLanguage();
+    index.pressStart();
 }
 
 let startTrainPage = document.getElementById("createTrainPage");
 if (startTrainPage) {
     trainMaker.startPage()
+}
+
+let quitButton = document.getElementById('quitButton');
+if (quitButton) {
+    quitButton.addEventListener('click', (e) => {
+        window.location.href = "/docs";
+    })
 }
