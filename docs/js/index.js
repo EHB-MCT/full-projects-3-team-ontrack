@@ -139,6 +139,7 @@ let index = {
         document.getElementById('formName').addEventListener('click', (e) => {
             e.preventDefault();
             let name = document.getElementById('username').value;
+            localStorage.setItem("name", name)
             let language = localStorage.getItem("language");
             if (name) {
                 let htmlString = ``;
@@ -252,88 +253,117 @@ let trainMaker = {
         document.getElementById('header').style.display = "inherit"
         let htmlString = ``;
         if (language == "Engels") {
-            htmlString = ` <div id="Engels" class="options">
-            <p>Choose your locomotive</p>
+            htmlString = ` <div class="options">
             <div id="slideshow">
-               <div class="slide" id="front1"><p> placeholder image/gif 1 </p></div>
-               <div class="slide" id="front2"><p> placeholder image/gif 2 </p></div>
-               <div class="slide" id="front3"><p> placeholder image/gif 3 </p></div>
-               <a class="prev" onclick="changeSlide(-1)"> arrow left</a>
-               <a class="next" onclick="this.changeSlide(1)"> arrow right</a>
-             
+               <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+               <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+               <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+               <a id="prev" class="prev"> &#10094</a>
+               <a id="next" class="next"> &#10095</a>
             </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectLocomotive">Select</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                        Choose your locomotive
+                    </p>
+                    <button class="buttons" id="nextOption">Next</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Nederlands") {
-            htmlString = ` <div id="Nederlands" class="options">
-            <p>Kies jouw locomotief</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+               <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectLocomotive">Selecteer</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Kies uw locomotief</p>
+                    <button class="buttons" id="nextOption">Volgende</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Frans") {
-            htmlString = ` <div id="Frans" class="options">
-            <p>Choisissez votre locomotive</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons" >
-                <p id="selectLocomotive">choisissez</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                    Choisissez votre locomotive
+                    </p>
+                    <button class="buttons" id="nextOption">Suivant</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Duits") {
-            htmlString = ` <div id="Duits" class="options">
-            <p>Wählen Sie Ihre Lokomotive</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectLocomotive">auswählen</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                     Wählen Sie Ihre Lokomotive
+                    </p>
+                    <button class="buttons" id="nextOption">Nächste</button>
+                </div>
             </div>
         </div>`
         }
@@ -341,8 +371,10 @@ let trainMaker = {
         htmlPage.innerHTML = htmlString
 
         this.showSlide(0)
+        document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
+        document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
-        document.getElementById('selectLocomotive').addEventListener('click', (e) => {
+        document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWagon1(htmlPage)
         })
     },
@@ -353,18 +385,17 @@ let trainMaker = {
     },
 
     showSlide(n) {
-        /* var i; */
+        var i;
         var slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {
+        if (n > slides.length - 1) {
             this.slideIndex = 0
         }
         if (n < 0) {
             this.slideIndex = slides.length
         }
-        //maybe unnecessary
-        /* for (i = 0; i < slides.length; i++) {
+        for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-        } */
+        }
         slides[this.slideIndex].style.display = "block";
     },
 
@@ -375,90 +406,131 @@ let trainMaker = {
         document.getElementById('header').innerHTML = ` <img src="../img/header/header_2.png" alt="header 2" >`
         let htmlString = ``;
         if (language == "Engels") {
-            htmlString = ` <div id="Engels" class="options">
-            <p>Choose your first wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon1">Select</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Great choice
+                    <br>
+                    Choose your first wagon.</p>
+                    <button class="buttons" id="nextOption">Next</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Nederlands") {
-            htmlString = ` <div id="Nederlands" class="options">
-            <p>Kies jouw eerste wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon1">Selecteer</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Goeie keuze
+                    <br>
+                    Kies je eerste wagon.</p>
+                    <button class="buttons" id="nextOption">Volgende</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Frans") {
-            htmlString = ` <div id="Frans" class="options">
-            <p>Choisissez votre premier wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons"
-                <p id="selectWagon1">choisissez</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                    Excellent choix !
+                    <br>
+                    Choisissez votre premier wagon.</p>
+                    <button class="buttons" id="nextOption">Suivant</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Duits") {
-            htmlString = ` <div id="Duits" class="options">
-            <p>Wählen Sie Ihren ersten Waggon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon1">auswählen</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                    Gute Wahl!
+                    <br>
+                    Wählen Sie Ihren ersten Waggon.</p>
+                    <button class="buttons" id="nextOption">Nächste</button>
+                </div>
             </div>
         </div>`
         }
 
         htmlPage.innerHTML = htmlString
+        this.showSlide(0)
+        document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
+        document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
-        document.getElementById('selectWagon1').addEventListener('click', (e) => {
+        document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWagon2(htmlPage)
         })
     },
@@ -469,90 +541,131 @@ let trainMaker = {
         document.getElementById('header').innerHTML = ` <img src="../img/header/header_3.png" alt="header 3" >`
         let htmlString = ``;
         if (language == "Engels") {
-            htmlString = ` <div id="Engels" class="options">
-            <p>Choose your second wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon2">Select</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Great choice
+                    <br>
+                    Choose your second wagon.</p>
+                    <button class="buttons" id="nextOption">Next</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Nederlands") {
-            htmlString = ` <div id="Nederlands" class="options">
-            <p>Kies jouw tweede wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon2">Selecteer</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Goeie keuze
+                    <br>
+                    Kies je tweede wagon.</p>
+                    <button class="buttons" id="nextOption">Volgende</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Frans") {
-            htmlString = ` <div id="Frans" class="options">
-            <p>Choisissez votre deuxième wagon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
-            </div>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-            <div class="buttons">
-                <p id="selectWagon2">choisissez</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                    Excellent choix !
+                    <br>
+                    Choisissez votre deuxième wagon.</p>
+                    <button class="buttons" id="nextOption">Suivant</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Duits") {
-            htmlString = ` <div id="Duits" class="options">
-            <p>Wählen Sie Ihren zweiten Waggon</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
+            <div id="colours">
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
-            </div>
-            <div class="buttons">
-                <p id="selectWagon2">auswählen</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>
+                    Gute Wahl!
+                    <br>
+                    Wählen Sie Ihren zweite Waggon.</p>
+                    <button class="buttons" id="nextOption">Nächste</button>
+                </div>
             </div>
         </div>`
         }
 
         htmlPage.innerHTML = htmlString
+        this.showSlide(0)
+        document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
+        document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
-        document.getElementById('selectWagon2').addEventListener('click', (e) => {
+        document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWheels(htmlPage)
         })
     },
@@ -563,194 +676,136 @@ let trainMaker = {
         document.getElementById('header').innerHTML = ` <img src="../img/header/header_4.png" alt="header 4" >`
         let htmlString = ``;
         if (language == "Engels") {
-            htmlString = ` <div id="Engels" class="options">
-            <p>Choose your wheels</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
+            <div id="colours">
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
-            </div>
-            <div class="buttons">
-                <p id="selectWheels">Select</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Lastly, choose your wheels.</p>
+                    <button class="buttons" id="nextOption">Next</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Nederlands") {
-            htmlString = ` <div id="Nederlands" class="options">
-            <p>Kies jouw wielen</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
+            <div id="colours">
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
-            </div>
-            <div class="buttons">
-                <p id="selectWheels">Selecteer</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Ten slotte, kies je wielen.</p>
+                    <button class="buttons" id="nextOption">Volgende</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Frans") {
-            htmlString = ` <div id="Frans" class="options">
-            <p>Wählen Sie Ihre Räder</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
+            <div id="colours">
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
-            </div>
-            <div class="buttons">
-                <p id="selectWheels">choisissez</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Enfin, choisissez vos roues.</p>
+                    <button class="buttons" id="nextOption">Suivant</button>
+                </div>
             </div>
         </div>`
         } else if (language == "Duits") {
-            htmlString = ` <div id="Duits" class="options">
-            <p>Wählen Sie Ihre Räder</p>
-            <div id="imgPlaceholderOptions">
-                <p>image placeholder</p>
+            htmlString = ` <div class="options">
+            <div id="slideshow">
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <a id="prev" class="prev"> &#10094</a>
+            <a id="next" class="next"> &#10095</a>
+         </div>
+            <div id="colours">
+                <img id="red" src="./../img/colours/red.png">
+                <img id="orange" src="./../img/colours/orange.png">
+                <img id="yellow" src="./../img/colours/yellow.png">
+                <img id="green" src="./../img/colours/green.png">
+                <img id="aqua" src="./../img/colours/aqua.png">
+                <img id="blue" src="./../img/colours/blue.png">
+                <img id="purple" src="./../img/colours/purple.png">
+                <img id="pink" src="./../img/colours/pink.png">
             </div>
-             <div id="colours">
-                <p id="white"></p>
-                <p id="red"></p>
-                <p id="orange"></p>
-                <p id="yellow"></p>
-                <p id="green"></p>
-                <p id="blue"></p>
-                <p id="purple"></p>
-                <p id="black"></p>
-            </div>
-            <div class="buttons">
-                <p id="selectWheels">auswählen</p>
+            <div id="textBubble">
+                <img src="./../img/conducteur.png">
+                <div>
+                    <p>Schließlich wählen Sie Ihre Räder.</p>
+                    <button class="buttons" id="nextOption">Nächste</button>
+                </div>
             </div>
         </div>`
         }
 
         htmlPage.innerHTML = htmlString
+        this.showSlide(0)
+        document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
+        document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
-        document.getElementById('selectWheels').addEventListener('click', (e) => {
-            this.confirmPage(htmlPage)
+        document.getElementById('nextOption').addEventListener('click', (e) => {
+            window.location.href = '/docs/html/endTrain.html'
         })
-    },
-
-
-    /* Preview train + Options */
-    confirmPage(htmlPage) {
-        let language = localStorage.getItem("language");
-        let htmlString = ``
-        htmlPage.innerHTML = ``;
-        document.getElementById('header').innerHTML = ` <img src="../img/header/header_5.png" alt="header 5" >`
-        if (language == "Engels") {
-            htmlString = ` <div id="Engels" class="preview">
-            <p>Preview</p>
-            <div id="imgPlaceholderPreview">
-                <p>image placeholder</p>
-            </div>
-            <div id="optionButtons">
-                <p id="show" class="buttons">Show on screen</p>
-                <p id="print" class="buttons">Print card</p>
-                <p id="e-mail" class="buttons">e-mail</p>
-            </div>
-            <div class="cancelButton" id="cancelButton">
-            <p id="cancel">Cancel</p>
-            </div>
-        </div>`
-        } else if (language == "Nederlands") {
-            htmlString = ` <div id="Engels" class="preview">
-            <p>Preview</p>
-            <div id="imgPlaceholderPreview">
-                <p>image placeholder</p>
-            </div>
-            <div id="optionButtons">
-                <p id="show" class="buttons">Op scherm tonen</p>
-                <p id="print" class="buttons">Kaart afdrukken</p>
-                <p id="e-mail" class="buttons">e-Mail</p>
-            </div>
-            <div class="cancelButton" id="cancelButton">
-            <p id="cancel">annuleren</p>
-            </div>
-        </div>`
-        } else if (language == "Frans") {
-            htmlString = ` <div id="Engels" class="preview">
-            <p>aperçu</p>
-            <div id="imgPlaceholderPreview">
-                <p>image placeholder</p>
-            </div>
-            <div id="optionButtons">
-                <p id="show" class="buttons">Afficher sur l'écran</p>
-                <p id="print" class="buttons">Imprimer la carte</p>
-                <p id="e-mail" class="buttons">E-Mail</p>
-            </div>
-            <div class="cancelButton" id="cancelButton">
-            <p id="cancel">Annuler</p>
-            </div>
-        </div>`
-        } else if (language == "Duits") {
-            htmlString = ` <div id="Engels" class="preview">
-            <p>Vorschau</p>
-            <div id="imgPlaceholderPreview">
-                <p>image placeholder</p>
-            </div>
-            <div id="optionButtons">
-                <p id="show" class="buttons">auf dem Bildschirm zeigen</p>
-                <p id="print" class="buttons">Karte drucken</p>
-                <p id="e-mail" class="buttons">E-Mail</p>
-            </div>
-            <div class="cancelButton" id="cancelButton">
-            <p id="cancel">Abbrechen</p>
-            </div>
-        </div>`
-        }
-        htmlPage.innerHTML = htmlString
-
-        document.getElementById('optionButtons').addEventListener('click', (e) => {
-            if (e.target.id !== 'show') {
-                endingOptions.showTrain
-            } else if (e.target.id !== 'print') {
-                endingOptions.printTrain
-            } else if (e.target.id !== 'e-mail') {
-                endingOptions.mailTrain
-            }
-        })
-
-        document.getElementById('cancelButton').addEventListener('click', (e) => {
-            if (e.target.id !== 'cancelButton') {
-                window.location.href = "/docs";
-            }
-        })
-
     }
 }
 
-let endingOptions = {
-    showTrain() {
-        window.location.href = "/docs";
-    },
-    printTrain() {
-        window.location.href = "/docs";
-    },
-    mailTrain() {
-        window.location.href = "/docs";
+let endOptions = {
+    init() {
+        console.log("hello")
     }
 }
+
+
+
+
+
 
 
 /* Checking the page the user is on */
@@ -769,4 +824,9 @@ if (quitButton) {
     quitButton.addEventListener('click', (e) => {
         window.location.href = "/docs";
     })
+}
+
+let endCreateTrain = document.getElementById('endCreateTrain');
+if (endCreateTrain) {
+    endOptions.init()
 }
