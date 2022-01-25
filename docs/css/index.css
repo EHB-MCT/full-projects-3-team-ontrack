@@ -25,7 +25,7 @@ body {
 #inside {
     height: 100vh;
     width: 100vw;
-    background-image: url(./../img/inside.png);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/inside.png);
     background-size: cover;
 }
 
@@ -41,11 +41,16 @@ body {
 **************/
 .buttons {
     background-color: var(--lightorange);
-    width: 80%;
+    width: 60%;
     margin: auto auto 35px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2.4px 2.4px 3.2px var(--orange);
+    padding: 5px 0;
+}
+
+#wider {
+    width: 80%;
 }
 
 .buttons #start {
@@ -99,7 +104,60 @@ body {
 
 /*name*/
 #name {
-    display: none;
+    padding-top: 15vh;
+}
+
+#conducteurTiny {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#conducteurText {
+    background-color: rgba(255, 255, 255, 0.293);
+    margin: auto;
+    width: 75vw;
+    padding: 0 0 10px;
+    border-radius: 25px;
+}
+
+#nameText {
+    margin: auto;
+    border-radius: 25px;
+    padding: 12.5px 15px;
+
+    background-color: var(--white);
+    width: 225px;
+
+    color: var(--black);
+    font-size: 11pt;
+}
+
+#nameText p:last-of-type {
+    margin-top: 10px;
+}
+
+#formName {
+    text-align: center;
+    margin: 5vh 0 2.5vh;
+}
+
+#username {
+    background: none;
+    border: none;
+    border-bottom: solid 2px white;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-bottom: 7.5vh;
+
+    font-size: 16pt;
+    font-weight: bold;
+    color: lightgray;
+}
+
+/*Intro*/
+#lower {
+    margin-top: 15vh;
 }
 
 /**************
@@ -128,16 +186,15 @@ body {
 
 #header img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: .5em;
+    padding-top: .5em;
     width: 70%;
 }
 
-#imgPlaceholderOptions {
-    color: black;
+#slideshow {
+    color: white;
     font-size: 14pt;
     height: 30vh;
+    position: relative;
 }
 
 .cancelButton {
@@ -148,6 +205,10 @@ body {
     text-align: center;
     border-radius: 15pt;
     box-shadow: 2.4px 2.4px 3.2px var(--lightorange);
+}
+
+.slide {
+    display: none;
 }
 
 /**************
