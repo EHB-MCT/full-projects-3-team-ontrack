@@ -1,33 +1,23 @@
 "use strict";
 
+/** Index.html - Choose language **/
 let index = {
     checkLanguage() {
         document.getElementById('languages').addEventListener('click', (e) => {
             localStorage.setItem('language', e.target.id);
             let language = localStorage.getItem("language");
             if (language != "languages") {
-                document.getElementById('languages').style.display = "none";
-                document.getElementsByClassName(language)[0].style.display = "inherit";
-                index.chooseOption();
+                window.location.href = "html/startTrain.html";
             }
         })
 
-    },
-    chooseOption() {
-        let language = localStorage.getItem("language");
-        document.getElementsByClassName(language)[0].addEventListener('click', (e) => {
-            console.log(e.target.id)
-            if (e.target.id == "train") {
-                window.location.href = "html/train/startTrain.html";
-            } else if (e.target.id == "selfie") {
-                window.location.href = "html/selfie/takeSelfie.html";
-            }
-        })
     }
 }
 
+/** StartTrain.html - Make your train **/
 let trainMaker = {
-    checkLanguage() {
+    /* Startbutton */
+    startPage() {
         let language = localStorage.getItem("language");
         let htmlPage = document.getElementById("createTrainPage");
         let htmlString = ``
@@ -80,6 +70,7 @@ let trainMaker = {
         })
 
     },
+    /* Choose a locomotive */
     selectFront(htmlPage) {
         let language = localStorage.getItem("language");
         htmlPage.innerHTML = ``;
@@ -91,7 +82,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectLocomotive">Select</p>
             </div>
         </div>`
@@ -101,7 +102,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectLocomotive">Selecteer</p>
             </div>
         </div>`
@@ -111,7 +122,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons" >
                 <p id="selectLocomotive">choisissez</p>
             </div>
         </div>`
@@ -121,7 +142,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectLocomotive">auswählen</p>
             </div>
         </div>`
@@ -129,14 +160,18 @@ let trainMaker = {
 
         htmlPage.innerHTML = htmlString
 
-        document.getElementById('selectLocomotive').addEventListener('click', (e) =>{
+        document.getElementById('selectLocomotive').addEventListener('click', (e) => {
             this.selectWagon1(htmlPage)
         })
+        document.getElementById('colours').addEventListener('click', (e) => {
+            console.log(e.target.id)
+        })
     },
-    selectWagon1(htmlPage){
+    /* Choose a first wagon */
+    selectWagon1(htmlPage) {
         let language = localStorage.getItem("language");
         htmlPage.innerHTML = ``;
-        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_2.png" alt="header 2" >`
+        document.getElementById('header').innerHTML = ` <img src="../img/header/header_2.png" alt="header 2" >`
         let htmlString = ``;
         if (language == "Engels") {
             htmlString = ` <div id="Engels" class="options">
@@ -144,7 +179,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon1">Select</p>
             </div>
         </div>`
@@ -154,7 +199,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon1">Selecteer</p>
             </div>
         </div>`
@@ -164,7 +219,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons"
                 <p id="selectWagon1">choisissez</p>
             </div>
         </div>`
@@ -174,7 +239,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon1">auswählen</p>
             </div>
         </div>`
@@ -182,14 +257,15 @@ let trainMaker = {
 
         htmlPage.innerHTML = htmlString
 
-        document.getElementById('selectWagon1').addEventListener('click', (e) =>{
+        document.getElementById('selectWagon1').addEventListener('click', (e) => {
             this.selectWagon2(htmlPage)
         })
     },
-    selectWagon2(htmlPage){
+    /* Choose a second wagon */
+    selectWagon2(htmlPage) {
         let language = localStorage.getItem("language");
         htmlPage.innerHTML = ``;
-        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_3.png" alt="header 3" >`
+        document.getElementById('header').innerHTML = ` <img src="../img/header/header_3.png" alt="header 3" >`
         let htmlString = ``;
         if (language == "Engels") {
             htmlString = ` <div id="Engels" class="options">
@@ -197,7 +273,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon2">Select</p>
             </div>
         </div>`
@@ -207,7 +293,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon2">Selecteer</p>
             </div>
         </div>`
@@ -217,7 +313,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+            <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon2">choisissez</p>
             </div>
         </div>`
@@ -227,7 +333,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+             <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWagon2">auswählen</p>
             </div>
         </div>`
@@ -235,14 +351,15 @@ let trainMaker = {
 
         htmlPage.innerHTML = htmlString
 
-        document.getElementById('selectWagon2').addEventListener('click', (e) =>{
+        document.getElementById('selectWagon2').addEventListener('click', (e) => {
             this.selectWheels(htmlPage)
         })
     },
-    selectWheels(htmlPage){
+    /* Choose wheels */
+    selectWheels(htmlPage) {
         let language = localStorage.getItem("language");
         htmlPage.innerHTML = ``;
-        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_4.png" alt="header 4" >`
+        document.getElementById('header').innerHTML = ` <img src="../img/header/header_4.png" alt="header 4" >`
         let htmlString = ``;
         if (language == "Engels") {
             htmlString = ` <div id="Engels" class="options">
@@ -250,7 +367,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+             <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWheels">Select</p>
             </div>
         </div>`
@@ -260,7 +387,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+             <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWheels">Selecteer</p>
             </div>
         </div>`
@@ -270,7 +407,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+             <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWheels">choisissez</p>
             </div>
         </div>`
@@ -280,7 +427,17 @@ let trainMaker = {
             <div id="imgPlaceholderOptions">
                 <p>image placeholder</p>
             </div>
-            <div class="buttons" id="startButton">
+             <div id="colours">
+                <p id="white"></p>
+                <p id="red"></p>
+                <p id="orange"></p>
+                <p id="yellow"></p>
+                <p id="green"></p>
+                <p id="blue"></p>
+                <p id="purple"></p>
+                <p id="black"></p>
+            </div>
+            <div class="buttons">
                 <p id="selectWheels">auswählen</p>
             </div>
         </div>`
@@ -288,14 +445,107 @@ let trainMaker = {
 
         htmlPage.innerHTML = htmlString
 
-        document.getElementById('selectWheels').addEventListener('click', (e) =>{
+        document.getElementById('selectWheels').addEventListener('click', (e) => {
             this.confirmPage(htmlPage)
         })
     },
-    confirmPage(htmlPage){
+    /* Preview train + Options */
+    confirmPage(htmlPage) {
         let language = localStorage.getItem("language");
+        let htmlString = ``
         htmlPage.innerHTML = ``;
-        document.getElementById('header').innerHTML = ` <img src="../../img/header/header_5.png" alt="header 5" >`
+        document.getElementById('header').innerHTML = ` <img src="../img/header/header_5.png" alt="header 5" >`
+        if (language == "Engels"){
+            htmlString = ` <div id="Engels" class="preview">
+            <p>Preview</p>
+            <div id="imgPlaceholderPreview">
+                <p>image placeholder</p>
+            </div>
+            <div id="optionButtons">
+                <p id="show" class="buttons">Show on screen</p>
+                <p id="print" class="buttons">Print card</p>
+                <p id="e-mail" class="buttons">e-mail</p>
+            </div>
+            <div class="cancelButton" id="cancelButton">
+            <p id="cancel">Cancel</p>
+            </div>
+        </div>`
+        } else if (language == "Nederlands"){
+            htmlString = ` <div id="Engels" class="preview">
+            <p>Preview</p>
+            <div id="imgPlaceholderPreview">
+                <p>image placeholder</p>
+            </div>
+            <div id="optionButtons">
+                <p id="show" class="buttons">Op scherm tonen</p>
+                <p id="print" class="buttons">Kaart afdrukken</p>
+                <p id="e-mail" class="buttons">e-Mail</p>
+            </div>
+            <div class="cancelButton" id="cancelButton">
+            <p id="cancel">annuleren</p>
+            </div>
+        </div>`
+        }  else if (language == "Frans"){
+            htmlString = ` <div id="Engels" class="preview">
+            <p>aperçu</p>
+            <div id="imgPlaceholderPreview">
+                <p>image placeholder</p>
+            </div>
+            <div id="optionButtons">
+                <p id="show" class="buttons">Afficher sur l'écran</p>
+                <p id="print" class="buttons">Imprimer la carte</p>
+                <p id="e-mail" class="buttons">E-Mail</p>
+            </div>
+            <div class="cancelButton" id="cancelButton">
+            <p id="cancel">Annuler</p>
+            </div>
+        </div>`
+        }else if (language == "Duits"){
+            htmlString = ` <div id="Engels" class="preview">
+            <p>Vorschau</p>
+            <div id="imgPlaceholderPreview">
+                <p>image placeholder</p>
+            </div>
+            <div id="optionButtons">
+                <p id="show" class="buttons">auf dem Bildschirm zeigen</p>
+                <p id="print" class="buttons">Karte drucken</p>
+                <p id="e-mail" class="buttons">E-Mail</p>
+            </div>
+            <div class="cancelButton" id="cancelButton">
+            <p id="cancel">Abbrechen</p>
+            </div>
+        </div>`
+        }
+        htmlPage.innerHTML = htmlString
+
+        document.getElementById('optionButtons').addEventListener('click', (e) => {
+            if (e.target.id !== 'show') {
+                endingOptions.showTrain
+            } else if (e.target.id !== 'print') {
+                endingOptions.printTrain
+            } else if (e.target.id !== 'e-mail') {
+                endingOptions.mailTrain
+            }
+        })
+
+        document.getElementById('cancelButton').addEventListener('click', (e) => {
+            if (e.target.id !== 'cancelButton') {
+                window.location.href = "/docs";
+            }
+        })
+
+    }
+}
+
+let endingOptions = {
+    showTrain() {
+        window.location.href = "/docs";
+    },
+    printTrain() {
+        window.location.href = "/docs";
+    },
+    mailTrain() {
+        window.location.href = "/docs";
     }
 }
 
@@ -308,5 +558,5 @@ if (indexpage) {
 
 let startTrainPage = document.getElementById("createTrainPage");
 if (startTrainPage) {
-    trainMaker.checkLanguage()
+    trainMaker.startPage()
 }
