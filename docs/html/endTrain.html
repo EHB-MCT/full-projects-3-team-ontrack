@@ -9,21 +9,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
+    <!--  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script> -->
+    
+    <!--Printen-->
+    <script src="./../node_modules/print-js/dist/print.js"></script>
+    <link rel="stylesheet" type="text/css" href="./../node_modules/print-js/dist/print.css">
 </head>
 
 <body>
     <div id="inside">
-    <header id="header">
-        <img src="../img/header/header_5.png" alt="header 5" >
-    </header>
-    <div id="quitButton">
-        <p id="quit">Quit X</p>
+        <header id="headerInside">
+            <img src="../img/header/header_5.png" alt="header 5">
+        </header>
+        <div id="quitButton">
+            <p id="quit">Quit X</p>
+        </div>
+        <main id="endCreateTrain">
+          <!--   <img style= "display: none;" id="image1" src="../img/filter/conductor_hat_V5.png" />
+            <noscript>You need to enable JavaScript to run this app.</noscript>
+            <div id="root"></div>>> -->
+        </main>
     </div>
-    <main id="endCreateTrain">
-       
-    </main>
-</div>
 </body>
-<script src="../js/index.js"></script>
+<script type="module" src="../js/index.js"></script>
 
 </html>

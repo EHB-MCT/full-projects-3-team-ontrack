@@ -39,7 +39,7 @@ let index = {
                             </div>
                         </div>
                 <form action="submit" id="formName">
-                    <input type="text" id="username" placeholder="your name" required>
+                    <input type="text" id="username" class="formLayout" placeholder="your name" required>
                     <div class="buttons">
                         <p id="next">Next</p>
                     </div>
@@ -65,7 +65,7 @@ let index = {
                     </div>
                 </div>
                 <form action="submit" id="formName">
-                    <input type="text" id="username" placeholder="jouw naam" required>
+                    <input type="text" id="username" class="formLayout" placeholder="jouw naam" required>
                     <div class="buttons">
                         <p id="next">Volgende</p>
                     </div>
@@ -92,7 +92,7 @@ let index = {
                     </div>
                 </div>
                 <form action="submit" id="formName">
-                    <input type="text" id="username" placeholder="votre nom" required>
+                    <input type="text" id="username" class="formLayout" placeholder="votre nom" required>
                     <div class="buttons">
                         <p id="next">Suivant</p>
                     </div>
@@ -120,7 +120,7 @@ let index = {
                             </div>
                     </div>
                     <form action="submit" id="formName">
-                        <input type="text" id="username" placeholder="dein Name" required>
+                        <input type="text" id="username" class="formLayout" placeholder="dein Name" required>
                         <div class="buttons">
                             <p id="next">nächste</p>
                         </div>
@@ -391,7 +391,7 @@ let trainMaker = {
             this.slideIndex = 0
         }
         if (n < 0) {
-            this.slideIndex = slides.length
+            this.slideIndex = slides.length - 1
         }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
@@ -797,14 +797,292 @@ let trainMaker = {
 }
 
 let endOptions = {
+    language: localStorage.getItem("language"),
+    name: localStorage.getItem("name"),
+    htmlPage: document.getElementById('endCreateTrain'),
     init() {
-        console.log("hello")
+        let htmlString = ``;
+        if (this.language == "Engels") {
+            htmlString = ` <div id="conducteurText">
+            <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+            <div id="nameText">
+            <p>
+            All done! It looks wonderfull ${this.name}.
+            </p>
+            <p>
+            Would you like to see yourself as a conductor?
+            </p>
+            </div>
+            <div id="choice">
+                <p id="yes" class="buttons smaller">Yes</p>
+                <p id="no" class="buttons smaller">No</p>
+            </div>
+        </div>`
+        } else if (this.language == "Nederlands") {
+            htmlString = ` <div id="conducteurText">
+            <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+            <div id="nameText">
+            <p>
+            Helemaal klaar! Het ziet er prachtig uit ${this.name}.
+            </p>
+            <p>
+            Zou je jezelf willen zien als een conducteur?
+            </p>
+            </div>
+            <div id="choice">
+                <p id="yes" class="buttons smaller">Ja</p>
+                <p id="no" class="buttons smaller">Nee</p>
+            </div>
+        </div>`
+        } else if (this.language == "Frans") {
+            htmlString = ` <div id="conducteurText">
+            <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+            <div id="nameText">
+            <p>
+            C'est fait ! C'est magnifique ${this.name}.
+            </p>
+            <p>
+            Voulez-vous vous voir comme un conducteur
+            </p>
+            </div>
+            <div id="choice">
+                <p id="yes" class="buttons smaller">Oui</p>
+                <p id="no" class="buttons smaller">Non</p>
+            </div>
+        </div>`
+        } else if (this.language == "Duits") {
+            htmlString = ` <div id="conducteurText">
+            <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+            <div id="nameText">
+            <p>
+            Alles fertig! Es sieht wunderbar aus ${this.name}
+            </p>
+            <p>
+            Würden Sie sich gerne als Schaffner sehen
+            </p>
+            </div>
+            <div id="choice">
+                <p id="yes" class="buttons smaller">Ja</p>
+                <p id="no" class="buttons smaller">Keine</p>
+            </div>
+        </div>`
+        }
+
+        this.htmlPage.innerHTML = htmlString;
+
+        document.getElementById("yes").addEventListener('click', (e) => {
+            this.takePhoto();
+        })
+
+        document.getElementById("no").addEventListener('click', (e) => {
+            this.doSomething();
+        })
+    },
+    takePhoto() {
+        this.htmlPage.innerHTML = `
+        <div>
+            <div>
+                <p>Plaats hier de filter</p>
+                <img id="click" class="shot" src="./../img/camera.png" alt="Camera">
+            </div>
+            <p class="buttons smaller left" id="back">Back</p>
+        </div>`
+
+        document.getElementById('back').addEventListener('click', (e) => {
+            this.init();
+        })
+
+        document.getElementById('click').addEventListener('click', (e) => {
+            console.log("click");
+            this.optionsPhoto();
+        })
+
+    },
+    optionsPhoto() {
+        let htmlString = ``;
+        if (this.language == "Engels") {
+            htmlString = `
+            <div>
+                <p>Plaats hier de foto</p>
+                <div>
+                    <p class="buttons" id="email">E-mail</p>
+                    <p class="buttons" id="again">Try again</p>
+                    <p class="buttons" id="done">Done</p>
+                </div>
+            </div>`
+        } else if (this.language == "Nederlands") {
+            htmlString = `
+            <div>
+                <p>Plaats hier de foto</p>
+                <div>
+                    <p class="buttons" id="email">E-mail</p>
+                    <p class="buttons" id="again">Opnieuw</p>
+                    <p class="buttons" id="done">Klaar</p>
+                </div>
+            </div>`
+        } else if (this.language == "Frans") {
+            htmlString = `
+            <div>
+                <p>Plaats hier de foto</p>
+                <div>
+                    <p class="buttons" id="email">Courriel</p>
+                    <p class="buttons" id="again">Encore une fois</p>
+                    <p class="buttons" id="done">Terminé</p>
+                </div>
+            </div>`
+        } else if (this.language == "Duits") {
+            htmlString = `
+            <div>
+                <p>Plaats hier de foto</p>
+                <div>
+                    <p class="buttons" id="email">E-mail</p>
+                    <p class="buttons" id="again">Nochmals</p>
+                    <p class="buttons" id="done">Erledigt</p>
+                </div>
+            </div>`
+        }
+
+        this.htmlPage.innerHTML = htmlString;
+
+        document.getElementById("email").addEventListener('click', (e) => {
+            this.sendPhoto("photo");
+        })
+
+        document.getElementById("again").addEventListener('click', (e) => {
+            this.takePhoto();
+        })
+
+        document.getElementById("done").addEventListener('click', (e) => {
+            this.doSomething();
+        })
+    },
+    sendPhoto(item) {
+        document.getElementById('headerInside').style.display = "none"
+        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/mailboxBackground.png)'
+        this.htmlPage.innerHTML = `
+            <div id="sendEmail">
+                <p>E-mail</p>
+                <img src="./../img/mail.png" alt="email icoon">
+            </div>
+            
+            <form action="submit" id="formName" class="mailForm">
+                <input type="text" id="email" class="formLayout" placeholder="your e-mail" required>
+                <div id="confirmation">
+                    <p> Your file has been sent </p>
+                </div>
+                <div>
+                        <p id="send" class="buttons">Send</p>
+                        <p id="done" class="buttons">Done</p>
+                </div>
+            </form>`
+    },
+    doSomething() {
+        let htmlString = ` `;
+
+        if (this.language == "Engels") {
+            htmlString = `
+            <div id="conducteurText">
+                <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+                <div id="nameText">
+                    <p>
+                        This train is perfect for you!
+                    </p>
+                    <p>
+                        What would you like to do now?
+                    </p>
+                </div>
+            </div>
+            <div id="choicesEnding">
+                <p id="preview" class="buttons">Preview train</p>
+                <p id="print" class="buttons">Print sticker</p>
+                <p id="email" class="buttons">E-mail</p>
+                <p id="build" class="buttons">Build again</p>
+                <p id="stop" class="buttons">Quit</p>
+            </div>`
+        } else if (this.language == "Nederlands") {
+            htmlString = `  
+            <div id="conducteurText">
+                <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+                <div id="nameText">
+                    <p>
+                    Deze trein is perfect voor jou!
+                    <p>
+                    Wat zou je nu willen doen?
+                    </p>
+                </div>
+            </div>
+            <div id="choicesEnding">
+                <p id="preview" class="buttons">Voorbeeld trein</p>
+                <p id="print" class="buttons">Sticker afdrukken</p>
+                <p id="email" class="buttons">E-mail</p>
+                <p id="build" class="buttons">Opnieuw bouwen</p>
+                <p id="stop" class="buttons">Quit</p>
+            </div>`
+        } else if (this.language == "Frans") {
+            htmlString = ` 
+            <div id="conducteurText">
+                <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+                <div id="nameText">
+                    <p>
+                    Ce train est parfait pour vous !
+                    </p>
+                    <p>
+                    Que voulez-vous faire maintenant ?
+                    </p>
+                </div>
+            </div>
+            <div id="choicesEnding">
+                <p id="preview" class="buttons">Exemple de train</p>
+                <p id="print" class="buttons">Imprimer l'autocollant</p>
+                <p id="email" class="buttons">Courriel</p>
+                <p id="build" class="buttons">Reconstruire</p>
+                <p id="stop" class="buttons">Quit</p>
+            </div>`
+        } else if (this.language == "Duits") {
+            htmlString = `  
+            <div id="conducteurText">
+                <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+                <div id="nameText">
+                    <p>
+                    Dieser Zug ist perfekt für Sie!
+                    </p>
+                    <p>
+                    Was würden Sie jetzt gerne tun?
+                    </p>
+                </div>
+            </div>
+            <div id="choicesEnding">
+                <p id="preview" class="buttons">Beispiel für Zug</p>
+                <p id="print" class="buttons">Aufkleber drucken</p>
+                <p id="email" class="buttons">E-mail</p>
+                <p id="build" class="buttons">Neu bauen</p>
+                <p id="stop" class="buttons">Quit</p>
+            </div>`
+        }
+        this.htmlPage.innerHTML = htmlString;
+
+
+        document.getElementById("preview").addEventListener('click', (e) => {
+            this.showPreview()
+        })
+        document.getElementById("print").addEventListener('click', (e) => {
+            // conducteur moet nog vervangen worden door trein
+            printJS('./../img/conducteur.png', 'image');
+        })
+        document.getElementById("email").addEventListener('click', (e) => {
+            this.sendPhoto("train");
+        })
+        document.getElementById("build").addEventListener('click', (e) => {
+            document.location.href = "/docs/html/startTrain.html"
+        })
+        document.getElementById("stop").addEventListener('click', (e) => {
+            document.location.href = "/docs"
+        })
+    },
+    showPreview(){
+
     }
 }
-
-
-
-
 
 
 
