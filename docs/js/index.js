@@ -4,6 +4,7 @@
 
 let index = {
     pressStart() {
+        window.localStorage.clear();
         document.getElementById('quitButton').style.display = "none"
         document.getElementById('start').addEventListener('click', (e) => {
             document.getElementById('startPage').style.display = "none";
@@ -155,10 +156,19 @@ let index = {
                             Nice to meet you ${name}!
                             </p>
                             <p>
-                            I'm sure you will make the best train Train World has ever seen!
+                            In a few minutes you will drive your first train.
                             </p>
                             <p>
-                           If you are ready, press Build.
+                            Oh but wait!
+                            </p>
+                            <p>
+                            You don't have a train yet?
+                            </p>
+                            <p>
+                            Let's build one then!
+                            </p>
+                            <p>
+                            If you are ready, press Build.
                             </p>
                             </div>
                         </div>
@@ -176,7 +186,16 @@ let index = {
                         Leuk je te ontmoeten ${name}!
                         </p>
                         <p>
-                        Ik weet zeker dat je de beste trein maakt die de Treinwereld ooit gezien heeft!
+                        Over een paar minuten rijdt je jouw eerste trein.
+                        </p>
+                        <p>
+                        Oh maar wacht!
+                        </p>
+                        <p>
+                        Heb je nog geen trein?
+                        </p>
+                        <p>
+                        Laten we er dan 1 bouwen!
                         </p>
                         <p>
                         Als u klaar bent, drukt u op bouw.
@@ -197,7 +216,16 @@ let index = {
                         Enchanté de vous rencontrer ${name}!
                         </p>
                         <p>
-                        Je suis sûr que vous ferez le meilleur train que Train World ait jamais vu !
+                        Dans quelques minutes, vous conduirez votre premier train.
+                        </p>
+                        <p>
+                        Oh mais attendez !
+                        </p>
+                        <p>
+                        Vous n'avez pas encore de train ?
+                        </p>
+                        <p>
+                        Construisons-en un alors !
                         </p>
                         <p>
                         Si vous êtes prêt, appuyez sur Build.
@@ -218,8 +246,16 @@ let index = {
                         Schön, Sie kennenzulernen ${name}!
                         </p>
                         <p>
-                        Ich bin sicher, dass Sie den besten Zug bauen werden, den Train World je gesehen hat!
-
+                        In wenigen Minuten werden Sie Ihren ersten Zug fahren.
+                        </p>
+                        <p>
+                        Oh, aber warte!
+                        </p>
+                        <p>
+                        Sie haben noch keinen Zug?
+                        </p>
+                        <p>
+                        Dann lasst uns einen bauen!
                         </p>
                         <p>
                         Wenn Sie bereit sind, drücken Sie auf Erstellen.
@@ -246,8 +282,13 @@ let index = {
 /** StartTrain.html - Make your train **/
 let trainMaker = {
     slideIndex: 0,
+    colorFront: "gray",
+    colorWagon1: "gray",
+    colorWagon2: "gray",
+    colorWheel: "gray",
     /* Choose a locomotive */
     selectFront() {
+
         let language = localStorage.getItem("language");
         let htmlPage = document.getElementById('createTrainPage');
         htmlPage.innerHTML = ``;
@@ -256,9 +297,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-               <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+               <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
                <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-               <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+               <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
                <a id="prev" class="prev"> &#10094</a>
                <a id="next" class="next"> &#10095</a>
             </div>
@@ -285,9 +326,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
             <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
                <a id="next" class="next"> &#10095</a>
          </div>
@@ -312,9 +353,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
             <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -341,9 +382,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
             <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -374,6 +415,22 @@ let trainMaker = {
         this.showSlide(0)
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
+
+        document.getElementById('next').addEventListener('click', (e) => {
+            localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+        })
+
+        document.getElementById('prev').addEventListener('click', (e) => {
+            localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+        })
+
+        document.getElementById('colours').addEventListener('click', (e) => {
+            if (e.target.id !== "colours") {
+                this.colorFront = e.target.id;
+                localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+                this.selectFront();
+            }
+        })
 
         document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWagon1(htmlPage)
@@ -409,9 +466,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -438,9 +495,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -467,9 +524,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -497,9 +554,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -531,6 +588,22 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        document.getElementById('next').addEventListener('click', (e) => {
+            localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+        })
+
+        document.getElementById('prev').addEventListener('click', (e) => {
+            localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+        })
+
+        document.getElementById('colours').addEventListener('click', (e) => {
+            if (e.target.id !== "colours") {
+                this.colorWagon1 = e.target.id;
+                localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+                this.selectWagon1(htmlPage);
+            }
+        })
+
         document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWagon2(htmlPage)
         })
@@ -544,9 +617,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -573,9 +646,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -602,9 +675,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -632,14 +705,14 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
             <div id="colours">
-                <img id="red" src="./../img/colours/red.png">
+                <img id="red" src="./../img/colours/redwheels
                 <img id="orange" src="./../img/colours/orange.png">
                 <img id="yellow" src="./../img/colours/yellow.png">
                 <img id="green" src="./../img/colours/green.png">
@@ -666,6 +739,22 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        document.getElementById('next').addEventListener('click', (e) => {
+            localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+        })
+
+        document.getElementById('prev').addEventListener('click', (e) => {
+            localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+        })
+
+        document.getElementById('colours').addEventListener('click', (e) => {
+            if (e.target.id !== "colours") {
+                this.colorWagon2 = e.target.id;
+                localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+                this.selectWagon2(htmlPage);
+            }
+        })
+
         document.getElementById('nextOption').addEventListener('click', (e) => {
             this.selectWheels(htmlPage)
         })
@@ -679,9 +768,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -706,9 +795,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -733,9 +822,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -751,7 +840,7 @@ let trainMaker = {
             </div>
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
-                <div>
+            wagon
                     <p>Enfin, choisissez vos roues.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
@@ -760,9 +849,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -791,6 +880,22 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        document.getElementById('next').addEventListener('click', (e) => {
+            localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+        })
+
+        document.getElementById('prev').addEventListener('click', (e) => {
+            localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+        })
+
+        document.getElementById('colours').addEventListener('click', (e) => {
+            if (e.target.id !== "colours") {
+                this.colorWheel = e.target.id;
+                localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+                this.selectWheels(htmlPage);
+            }
+        })
+
         document.getElementById('nextOption').addEventListener('click', (e) => {
             window.location.href = '/docs/html/endTrain.html'
         })
@@ -804,14 +909,19 @@ let endOptions = {
     init() {
         let htmlString = ``;
         if (this.language == "Engels") {
-            htmlString = ` <div id="conducteurText">
+            htmlString = ` 
+            <img class="myTrain" src="./../img/" alt="your train">
+            <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
             <p>
             All done! It looks wonderfull ${this.name}.
             </p>
             <p>
-            Would you like to see yourself as a conductor?
+            Before you start driving, I will give you your very own conductor hat. 
+            </p>
+            <p>
+            Would you like to take a selfie with it? 
             </p>
             </div>
             <div id="choice">
@@ -820,14 +930,19 @@ let endOptions = {
             </div>
         </div>`
         } else if (this.language == "Nederlands") {
-            htmlString = ` <div id="conducteurText">
+            htmlString = ` 
+            <img class="myTrain" src="./../img/" alt="your train">
+            <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
             <p>
             Helemaal klaar! Het ziet er prachtig uit ${this.name}.
             </p>
             <p>
-            Zou je jezelf willen zien als een conducteur?
+            Voordat je gaat rijden, geef ik je je eigen conducteurspet. 
+            </p>
+            <p>
+            Wil je er een selfie mee nemen?  
             </p>
             </div>
             <div id="choice">
@@ -836,14 +951,19 @@ let endOptions = {
             </div>
         </div>`
         } else if (this.language == "Frans") {
-            htmlString = ` <div id="conducteurText">
+            htmlString = `
+            <img class="myTrain" src="./../img/" alt="your train">
+            <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
             <p>
             C'est fait ! C'est magnifique ${this.name}.
             </p>
             <p>
-            Voulez-vous vous voir comme un conducteur
+            Avant que vous ne commenciez à conduire, je vous donnerai votre propre casquette de conducteur. 
+            </p>
+            <p>
+            Voulez-vous prendre un selfie avec?
             </p>
             </div>
             <div id="choice">
@@ -852,14 +972,18 @@ let endOptions = {
             </div>
         </div>`
         } else if (this.language == "Duits") {
-            htmlString = ` <div id="conducteurText">
+            htmlString = `<img  class="myTrain" src="./../img/" alt="your train">
+            <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
             <p>
             Alles fertig! Es sieht wunderbar aus ${this.name}
             </p>
             <p>
-            Würden Sie sich gerne als Schaffner sehen
+            Bevor Sie losfahren, gebe ich Ihnen Ihren eigenen Shaffnerkappe.   
+            </p>
+            <p>
+            Möchten Sie ein Selfie mit ihm machen? 
             </p>
             </div>
             <div id="choice">
@@ -957,27 +1081,10 @@ let endOptions = {
             this.doSomething();
         })
     },
-    sendPhoto(item) {
-        document.getElementById('headerInside').style.display = "none"
-        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/mailboxBackground.png)'
-        this.htmlPage.innerHTML = `
-            <div id="sendEmail">
-                <p>E-mail</p>
-                <img src="./../img/mail.png" alt="email icoon">
-            </div>
-            
-            <form action="submit" id="formName" class="mailForm">
-                <input type="text" id="email" class="formLayout" placeholder="your e-mail" required>
-                <div id="confirmation">
-                    <p> Your file has been sent </p>
-                </div>
-                <div>
-                        <p id="send" class="buttons">Send</p>
-                        <p id="done" class="buttons">Done</p>
-                </div>
-            </form>`
-    },
     doSomething() {
+        document.getElementById('backButton').style.display = "none";
+        document.getElementById('headerInside').style.display = "inherit";
+        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/inside.png)';
         let htmlString = ` `;
 
         if (this.language == "Engels") {
@@ -1067,8 +1174,7 @@ let endOptions = {
             this.showPreview()
         })
         document.getElementById("print").addEventListener('click', (e) => {
-            // conducteur moet nog vervangen worden door trein
-            printJS('./../img/conducteur.png', 'image');
+            this.print()
         })
         document.getElementById("email").addEventListener('click', (e) => {
             this.sendPhoto("train");
@@ -1080,12 +1186,208 @@ let endOptions = {
             document.location.href = "/docs"
         })
     },
-    showPreview() {
+    sendPhoto(item) {
+        document.getElementById('backButton').style.display = "block";
+        document.getElementById('headerInside').style.display = "none"
+        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/mailboxBackground.png)'
 
+        let htmlString = ` `;
+
+        if (this.language == "Engels") {
+            htmlString = `
+            <div id="sendEmail">
+                <p>E-mail</p>
+                <img src="./../img/mail.png" alt="email icoon">
+            </div>
+            
+            <form action="submit" id="formName" class="mailForm">
+                <input type="text" id="email" class="formLayout" placeholder="your e-mail" required>
+                <div id="confirmation">
+                    <p> Your file has been sent </p>
+                </div>
+                <div>
+                        <p id="send" class="buttons">Send</p>
+                        <p id="done" class="buttons">Done</p>
+                </div>
+            </form>`
+        } else if (this.language == "Nederlands") {
+            htmlString = `<div id="sendEmail">
+            <p>E-mail</p>
+            <img src="./../img/mail.png" alt="email icoon">
+        </div>
+        
+        <form action="submit" id="formName" class="mailForm">
+            <input type="text" id="email" class="formLayout" placeholder="uw e-mail" required>
+            <div id="confirmation">
+                <p> Uw bestand is verzonden </p>
+            </div>
+            <div>
+                    <p id="send" class="buttons">Send</p>
+                    <p id="done" class="buttons">Done</p>
+            </div>
+        </form>`
+        } else if (this.language == "Frans") {
+            htmlString = `<div id="sendEmail">
+            <p>Courriel</p>
+            <img src="./../img/mail.png" alt="email icoon">
+        </div>
+        
+        <form action="submit" id="formName" class="mailForm">
+            <input type="text" id="email" class="formLayout" placeholder="votre courriel" required>
+            <div id="confirmation">
+                <p>  Votre fichier a été envoyé  </p>
+            </div>
+            <div>
+                    <p id="send" class="buttons">Envoyer</p>
+                    <p id="done" class="buttons">Terminé</p>
+            </div>
+        </form>`
+        } else if (this.language == "Duits") {
+            htmlString = `<div id="sendEmail">
+            <p>E-mail</p>
+            <img src="./../img/mail.png" alt="email icoon">
+        </div>
+        
+        <form action="submit" id="formName" class="mailForm">
+            <input type="text" id="email" class="formLayout" placeholder="Ihre E-Mail" required>
+            <div id="confirmation">
+                <p>  Ihre Datei wurde gesendet  </p>
+            </div>
+            <div>
+                    <p id="send" class="buttons">Senden</p>
+                    <p id="done" class="buttons">Erledigt</p>
+            </div>
+        </form>`
+        }
+        this.htmlPage.innerHTML = htmlString;
+
+
+
+        document.getElementById('send').addEventListener('click', (e) => {
+            let mail = document.getElementById('email').value
+
+            if (mail) {
+                document.getElementById('email').style.display = "none";
+                document.getElementById('confirmation').style.display = "inherit";
+                document.getElementById('send').style.display = "none";
+                document.getElementById('done').style.display = "inherit";
+
+                /*Send mail
+                var templateParams = {
+                    user_name: localStorage.getItem("name"),
+                    user_email:mail,
+                    message: 'hallo'
+                };
+                emailjs.send('service_sendTrain', 'service_sendTrain', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                 }, function(error) {
+                    console.log('FAILED...', error);
+                 });
+                */
+
+                 /*To go back*/
+                document.getElementById('done').addEventListener('click', (e) => {
+                    this.doSomething();
+                })
+            }
+        })
+
+    },
+    print() {
+        document.getElementById('headerInside').style.display = "none";
+        document.getElementById('backButton').style.display = "block";
+        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
+
+        let htmlString = ` `;
+        if (this.language == "Engels") {
+            htmlString = `
+                <div class="print">
+                    <p>Print sticker</p>
+                    <img src="./../img/print.png" alt="print icon">
+                    <img src="./../" alt="your train">
+                    <p id="print" class="buttons">Print</p>
+                </div>`
+        } else if (this.language == "Nederlands") {
+            htmlString = `
+            <div class="print">
+                    <p>Sticker afdrukken</p>
+                    <img src="./../img/print.png" alt="print icon">
+                    <img src="./../" alt="your train">
+                    <p id="print" class="buttons">Print</p>
+                </div>`
+        } else if (this.language == "Frans") {
+            htmlString = `
+            <div class="print">
+                    <p>Imprimer l'autocollant</p>
+                    <img src="./../img/print.png" alt="print icon">
+                    <img src="./../" alt="your train">
+                    <p id="print"  class="buttons">Imprimer</p>
+                </div>`
+        } else if (this.language == "Duits") {
+            htmlString = `
+            <div class="print">
+                    <p>Aufkleber drucken</p>
+                    <img src="./../img/print.png" alt="print icon">
+                    <img src="./../" alt="your train">
+                    <p id="print" class="buttons">Drucken</p>
+                </div>`
+        }
+        this.htmlPage.innerHTML = htmlString;
+
+        document.getElementById('back').addEventListener('click', (e) => {
+            this.doSomething();
+        })
+        document.getElementById('print').addEventListener('click', (e) => {
+            // conducteur moet nog vervangen worden door trein-  
+            printJS('./../img/conducteur.png', 'image');
+            setTimeout(function () {
+                endOptions.doSomething()
+            }, 4000);
+        })
+    },
+    showPreview() {
+        document.getElementById('headerInside').style.display = "none";
+        document.getElementById('backButton').style.display = "block";
+        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
+
+        let htmlString = ` `;
+        if (this.language == "Engels") {
+            htmlString = `
+                <div class="preview">
+                    <p>Preview train</p>
+                    <img src="./../img/train.png" alt="train icon">
+                    <img src="./../" alt="your train">
+                </div>`
+        } else if (this.language == "Nederlands") {
+            htmlString = `
+            <div class="preview">
+                    <p>voorbeeld trein</p>
+                    <img src="./../img/train.png" alt="train icon">
+                    <img src="./../" alt="your train">
+                </div>`
+        } else if (this.language == "Frans") {
+            htmlString = `
+            <div class="preview">
+                    <p>Exemple de train</p>
+                    <img src="./../img/train.png" alt="train icon">
+                    <img src="./../" alt="your train">
+                </div>`
+        } else if (this.language == "Duits") {
+            htmlString = `
+            <div class="preview">
+                    <p>Beispiel für Zug</p>
+                    <img src="./../img/train.png" alt="train icon">
+                    <img src="./../" alt="your train">
+                </div>`
+        }
+        this.htmlPage.innerHTML = htmlString;
+
+        document.getElementById('back').addEventListener('click', (e) => {
+            this.doSomething();
+        })
     }
 }
-
-
 
 /* Checking the page the user is on */
 let indexpage = document.getElementById("indexPage");
@@ -1101,7 +1403,8 @@ if (startTrainPage) {
 let quitButton = document.getElementById('quitButton');
 if (quitButton) {
     quitButton.addEventListener('click', (e) => {
-        window.location.href = "/";
+        window.localStorage.clear();
+        window.location.href = "/docs";
     })
 }
 
@@ -1109,3 +1412,11 @@ let endCreateTrain = document.getElementById('endCreateTrain');
 if (endCreateTrain) {
     endOptions.init()
 }
+
+/*
+let email = document.getElementById('send')
+if(email){
+    import init from '@emailjs/browser';
+    emailjs.init('user_24dhpAFkPLUxQNORqiHVD');
+}
+*/

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@tensorflow-models/facemesh": "^0.0.5",
     "@tensorflow/tfjs": "^3.13.0",
     "@testing-library/jest-dom": "^5.16.1",

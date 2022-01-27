@@ -81,6 +81,26 @@ body {
     padding: 2px 10px;
 }
 
+#backButton {
+    display: none;
+    position: fixed;
+    top: 3%;
+    left: 5%;
+    background-color: var(--lightorange);
+    width: auto;
+    font-size: 14pt;
+    margin: auto auto 35px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2.4px 2.4px 3.2px var(--orange);
+}
+
+#backButton p {
+    width: auto;
+    padding: 2px 10px;
+}
+
+
 /*START*/
 #startPage {
     padding-top: 5.5em;
@@ -150,6 +170,10 @@ body {
     margin-top: 10px;
 }
 
+#nameText p:first-of-type {
+    margin-bottom: 10px;
+}
+
 #formName {
     text-align: center;
     margin: 5vh 0 2.5vh;
@@ -179,7 +203,6 @@ body {
 **************/
 #createTrainPage {
     text-align: center;
-    margin-top: 1.5em;
 }
 
 #imgPlaceholder {
@@ -265,7 +288,7 @@ body {
     margin-right: 8%;
     padding: 0%;
 
-    margin-top: 5vh;
+    margin-top: 10vh;
 }
 
 #colours img {
@@ -318,6 +341,12 @@ body {
     margin: 15px 0;
 }
 
+.myTrain {
+    width: 55%;
+    display: block;
+    margin: 10px auto 20px;
+}
+
 /*SELFIE*/
 .left {
     margin-left: 20px;
@@ -338,6 +367,50 @@ body {
     margin-top: 20px;
 }
 
+/*PREVIEW*/
+.preview {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 7.5%;
+}
+
+.preview p {
+    font-weight: 600;
+    padding-top: 2em;
+}
+
+.preview img {
+    width: 50%;
+    margin: auto;
+}
+
+.preview img:first-of-type {
+    width: 80px;
+    margin-bottom: 30%;
+}
+
+/*PRINT*/
+.print {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25%;
+}
+
+.print p {
+    font-weight: 600;
+}
+
+.print img {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 25%;
+}
+
+.print img:first-of-type {
+    width: 80px;
+}
 
 /*EMAIL*/
 #sendEmail {
