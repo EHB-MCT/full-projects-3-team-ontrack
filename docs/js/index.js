@@ -1,6 +1,7 @@
 "use strict";
 
 /** Index.html - Choose language **/
+
 let index = {
     pressStart() {
         document.getElementById('quitButton').style.display = "none"
@@ -1079,7 +1080,7 @@ let endOptions = {
             document.location.href = "/docs"
         })
     },
-    showPreview(){
+    showPreview() {
 
     }
 }
@@ -1100,7 +1101,7 @@ if (startTrainPage) {
 let quitButton = document.getElementById('quitButton');
 if (quitButton) {
     quitButton.addEventListener('click', (e) => {
-        window.location.href = "/docs";
+        window.location.href = "/";
     })
 }
 
