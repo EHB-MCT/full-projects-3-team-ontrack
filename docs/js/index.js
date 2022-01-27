@@ -36,7 +36,7 @@ let index = {
                             You must be the new conductor I hired.
                             </p>
                             <p>
-                            What is your name?
+                            What is your <font color="#6AB0CD">name</font>?
                             </p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ let index = {
                         Jij moet de nieuwe conducteur zijn die ik heb ingehuurd.
                         </p>
                         <p>
-                            Wat is jouw naam?
+                            Wat is jouw <font color="#6AB0CD">naam</font>?
                         </p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ let index = {
                         Vous devez être le nouveau conducteur que j'ai engagé.
                         </p>
                         <p>
-                        Quel est votre nom ?
+                        Quel est votre <font color="#6AB0CD">nom</font> ?
                         </p>
                     </div>
                 </div>
@@ -117,7 +117,7 @@ let index = {
                             Sie müssen der neue Schaffner sein, den ich eingestellt habe.
                             </p>
                             <p>
-                            Wie ist dein Name?
+                            Wie ist dein <font color="#6AB0CD">Name</font>?
                             </p>
                             </div>
                     </div>
@@ -168,7 +168,7 @@ let index = {
                             Let's build one then!
                             </p>
                             <p>
-                            If you are ready, press Build.
+                            If you are ready, press <font color="#6AB0CD">Build</font>.
                             </p>
                             </div>
                         </div>
@@ -198,7 +198,7 @@ let index = {
                         Laten we er dan 1 bouwen!
                         </p>
                         <p>
-                        Als u klaar bent, drukt u op bouw.
+                        Als je klaar bent, druk je op <font color="#6AB0CD">bouw</font>.
                         </p>
                         </div>
                     </div>
@@ -228,7 +228,7 @@ let index = {
                         Construisons-en un alors !
                         </p>
                         <p>
-                        Si vous êtes prêt, appuyez sur Build.
+                        Si vous êtes prêt, appuyez sur <font color="#6AB0CD">Build</font>.
                         </p>
                         </div>
                     </div>
@@ -258,7 +258,7 @@ let index = {
                         Dann lasst uns einen bauen!
                         </p>
                         <p>
-                        Wenn Sie bereit sind, drücken Sie auf Erstellen.
+                        Wenn Sie bereit sind, drücken Sie auf <font color="#6AB0CD">Erstellen</font>.
                         </p>
                         </div>
                     </div>
@@ -297,9 +297,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-               <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
-               <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-               <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
+               <div class="slide" id="front1"><img src="../img/fronts/C1_${this.colorFront}.png"></div>
+               <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
+               <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
                <a id="prev" class="prev"> &#10094</a>
                <a id="next" class="next"> &#10095</a>
             </div>
@@ -326,9 +326,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/C1_${this.colorFront}.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
                <a id="next" class="next"> &#10095</a>
          </div>
@@ -353,9 +353,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/C1_${this.colorFront}.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -382,9 +382,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/fronts/locomotive1_${this.colorFront}.png"></div>
-            <div class="slide" id="front2"><img src="../img/fronts/locomotive2.png"></div>
-            <div class="slide" id="front3"><img src="../img/fronts/locomotive3_${this.colorFront}.png"></div>
+            <div class="slide" id="front1"><img src="../img/fronts/C1_${this.colorFront}.png"></div>
+            <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
+            <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -416,18 +416,46 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        let type = ""
+
+        if (this.slideIndex == 0) {
+            type = "C"
+        } else if (this.slideIndex == 1) {
+            type = "M"
+        } else if (this.slideIndex == 2) {
+            type = "O"
+        }
+
+
         document.getElementById('next').addEventListener('click', (e) => {
-            localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('front', `${type}1_${this.colorFront}`)
+            this.selectFront();
         })
 
         document.getElementById('prev').addEventListener('click', (e) => {
-            localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('front', `${type}1_${this.colorFront}`)
+            this.selectFront();
+
         })
 
         document.getElementById('colours').addEventListener('click', (e) => {
             if (e.target.id !== "colours") {
                 this.colorFront = e.target.id;
-                localStorage.setItem('front', `locomotive${this.slideIndex + 1}_${this.colorFront}`)
+                localStorage.setItem('front', `${type}1_${this.colorFront}`)
                 this.selectFront();
             }
         })
@@ -466,9 +494,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -487,7 +515,7 @@ let trainMaker = {
                 <div>
                     <p>Great choice
                     <br>
-                    Choose your first wagon.</p>
+                    Choose your <font color="#6AB0CD">first wagon</font></p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -495,9 +523,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -516,7 +544,7 @@ let trainMaker = {
                 <div>
                     <p>Goeie keuze
                     <br>
-                    Kies je eerste wagon.</p>
+                    Kies je <font color="#6AB0CD">eerste wagon</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -524,9 +552,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -546,7 +574,7 @@ let trainMaker = {
                     <p>
                     Excellent choix !
                     <br>
-                    Choisissez votre premier wagon.</p>
+                    Choisissez votre <font color="#6AB0CD">premier wagon</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -554,9 +582,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon1}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -576,7 +604,7 @@ let trainMaker = {
                     <p>
                     Gute Wahl!
                     <br>
-                    Wählen Sie Ihren ersten Waggon.</p>
+                    Wählen Sie Ihren <font color="#6AB0CD">ersten Waggon</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -588,18 +616,44 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        let type = ""
+
+        if (this.slideIndex == 0) {
+            type = "C"
+        } else if (this.slideIndex == 1) {
+            type = "M"
+        } else if (this.slideIndex == 2) {
+            type = "O"
+        }
+
         document.getElementById('next').addEventListener('click', (e) => {
-            localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wagon1', `${type}2_${this.colorWagon1}`)
+            this.selectWagon1(htmlPage);
         })
 
         document.getElementById('prev').addEventListener('click', (e) => {
-            localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wagon1', `${type}2_${this.colorWagon1}`)
+            this.selectWagon1(htmlPage);
         })
 
         document.getElementById('colours').addEventListener('click', (e) => {
             if (e.target.id !== "colours") {
                 this.colorWagon1 = e.target.id;
-                localStorage.setItem('wagon1', `wagon${this.slideIndex + 1}_${this.colorWagon1}`)
+                localStorage.setItem('wagon1', `${type}2_${this.colorWagon1}`)
                 this.selectWagon1(htmlPage);
             }
         })
@@ -617,9 +671,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -638,7 +692,7 @@ let trainMaker = {
                 <div>
                     <p>Great choice
                     <br>
-                    Choose your second wagon.</p>
+                    Choose your <font color="#6AB0CD">second wagon</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -646,9 +700,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -667,7 +721,7 @@ let trainMaker = {
                 <div>
                     <p>Goeie keuze
                     <br>
-                    Kies je tweede wagon.</p>
+                    Kies je <font color="#6AB0CD">tweede wagon</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -675,9 +729,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -697,7 +751,7 @@ let trainMaker = {
                     <p>
                     Excellent choix !
                     <br>
-                    Choisissez votre deuxième wagon.</p>
+                    Choisissez votre <font color="#6AB0CD">deuxième wagon</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -705,9 +759,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wagon/wagon1.png"></div>
-            <div class="slide" id="front2"><img src="../img/wagon/wagon2.png"></div>
-            <div class="slide" id="front3"><img src="../img/wagon/wagon3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wagon/C2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wagon/M2_${this.colorWagon2}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -727,7 +781,7 @@ let trainMaker = {
                     <p>
                     Gute Wahl!
                     <br>
-                    Wählen Sie Ihren zweite Waggon.</p>
+                    Wählen Sie Ihren <font color="#6AB0CD">zweite Waggon</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -739,18 +793,44 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        let type = ""
+
+        if (this.slideIndex == 0) {
+            type = "C"
+        } else if (this.slideIndex == 1) {
+            type = "M"
+        } else if (this.slideIndex == 2) {
+            type = "O"
+        }
+
         document.getElementById('next').addEventListener('click', (e) => {
-            localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wagon2', `${type}3_${this.colorWagon2}`)
+            this.selectWagon2(htmlPage);
         })
 
         document.getElementById('prev').addEventListener('click', (e) => {
-            localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wagon2', `${type}3_${this.colorWagon2}`)
+            this.selectWagon2(htmlPage);
         })
 
         document.getElementById('colours').addEventListener('click', (e) => {
             if (e.target.id !== "colours") {
                 this.colorWagon2 = e.target.id;
-                localStorage.setItem('wagon2', `wagon${this.slideIndex + 1}_${this.colorWagon2}`)
+                localStorage.setItem('wagon2', `${type}3_${this.colorWagon2}`)
                 this.selectWagon2(htmlPage);
             }
         })
@@ -768,9 +848,9 @@ let trainMaker = {
         if (language == "Engels") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/C4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/M4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -787,7 +867,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Lastly, choose your wheels.</p>
+                    <p>Lastly, choose your <font color="#6AB0CD">wheels</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -795,9 +875,9 @@ let trainMaker = {
         } else if (language == "Nederlands") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/C4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/M4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -814,7 +894,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Ten slotte, kies je wielen.</p>
+                    <p>Ten slotte, kies je <font color="#6AB0CD">wielen</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -822,9 +902,9 @@ let trainMaker = {
         } else if (language == "Frans") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/C4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/M4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -841,7 +921,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
             wagon
-                    <p>Enfin, choisissez vos roues.</p>
+                    <p>Enfin, choisissez vos <font color="#6AB0CD">roues</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -849,9 +929,9 @@ let trainMaker = {
         } else if (language == "Duits") {
             htmlString = ` <div class="options">
             <div id="slideshow">
-            <div class="slide" id="front1"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front2"><img src="../img/wheels/wheel3.png"></div>
-            <div class="slide" id="front3"><img src="../img/wheels/wheel3.png"></div>
+            <div class="slide" id="front1"><img src="../img/wheels/C4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front2"><img src="../img/wheels/M4_${this.colorWheel}.png"></div>
+            <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
          </div>
@@ -868,7 +948,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Schließlich wählen Sie Ihre Räder.</p>
+                    <p>Schließlich wählen Sie Ihre <font color="#6AB0CD">Räder</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -880,18 +960,48 @@ let trainMaker = {
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
 
+        let type = ""
+
+        if (this.slideIndex == 0) {
+            type = "C"
+        } else if (this.slideIndex == 1) {
+            type = "M"
+        } else if (this.slideIndex == 2) {
+            type = "O"
+        }
+
         document.getElementById('next').addEventListener('click', (e) => {
-            localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+            let type = ""
+
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wheels', `${type}4_${this.colorWheel}`)
+            this.selectWheels(htmlPage);
         })
 
         document.getElementById('prev').addEventListener('click', (e) => {
-            localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+            let type = ""
+
+            if (this.slideIndex == 0) {
+                type = "C"
+            } else if (this.slideIndex == 1) {
+                type = "M"
+            } else if (this.slideIndex == 2) {
+                type = "O"
+            }
+            localStorage.setItem('wheels', `${type}4_${this.colorWheel}`)
+            this.selectWheels(htmlPage);
         })
 
         document.getElementById('colours').addEventListener('click', (e) => {
             if (e.target.id !== "colours") {
                 this.colorWheel = e.target.id;
-                localStorage.setItem('wheels', `wheel${this.slideIndex + 1}_${this.colorWheel}`)
+                localStorage.setItem('wheels', `${type}4_${this.colorWheel}`)
                 this.selectWheels(htmlPage);
             }
         })
@@ -908,9 +1018,21 @@ let endOptions = {
     htmlPage: document.getElementById('endCreateTrain'),
     init() {
         let htmlString = ``;
+        let wagon2 = localStorage.getItem("wagon2")
+        let wagon1 = localStorage.getItem("wagon1")
+        let front = localStorage.getItem("front")
+        let wheels = localStorage.getItem("wheels")
+
         if (this.language == "Engels") {
             htmlString = ` 
-            <img class="myTrain" src="./../img/" alt="your train">
+            <div class="myTrain">
+                <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            </div>
+
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -921,38 +1043,54 @@ let endOptions = {
             Before you start driving, I will give you your very own conductor hat. 
             </p>
             <p>
-            Would you like to take a selfie with it? 
+            Would you like to take a <font color="#6AB0CD">selfie</font> with it? 
             </p>
             </div>
             <div id="choice">
                 <p id="yes" class="buttons smaller">Yes</p>
                 <p id="no" class="buttons smaller">No</p>
             </div>
+        </div>
         </div>`
         } else if (this.language == "Nederlands") {
             htmlString = ` 
-            <img class="myTrain" src="./../img/" alt="your train">
-            <div id="conducteurText">
-            <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
-            <div id="nameText">
-            <p>
-            Helemaal klaar! Het ziet er prachtig uit ${this.name}.
-            </p>
-            <p>
-            Voordat je gaat rijden, geef ik je je eigen conducteurspet. 
-            </p>
-            <p>
-            Wil je er een selfie mee nemen?  
-            </p>
+            <div class="myTrain">
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
             </div>
-            <div id="choice">
-                <p id="yes" class="buttons smaller">Ja</p>
-                <p id="no" class="buttons smaller">Nee</p>
+
+        <div id="lowerText">  
+            <div id="conducteurText">
+                <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
+                <div id="nameText">
+                    <p>
+                    Helemaal klaar! Het ziet er prachtig uit ${this.name}.
+                    </p>
+                    <p>
+                    Voordat je gaat rijden, geef ik je je eigen conducteurspet. 
+                    </p>
+                    <p>
+                    Wil je er een <font color="#6AB0CD">selfie</font> mee nemen?  
+                    </p>
+                </div>
+                <div id="choice">
+                    <p id="yes" class="buttons smaller">Ja</p>
+                    <p id="no" class="buttons smaller">Nee</p>
+                </div>
             </div>
         </div>`
         } else if (this.language == "Frans") {
             htmlString = `
-            <img class="myTrain" src="./../img/" alt="your train">
+            <div class="myTrain">
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            </div>
+
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -963,16 +1101,25 @@ let endOptions = {
             Avant que vous ne commenciez à conduire, je vous donnerai votre propre casquette de conducteur. 
             </p>
             <p>
-            Voulez-vous prendre un selfie avec?
+            Voulez-vous prendre un <font color="#6AB0CD">selfie</font> avec?
             </p>
             </div>
             <div id="choice">
                 <p id="yes" class="buttons smaller">Oui</p>
                 <p id="no" class="buttons smaller">Non</p>
             </div>
+        </div>
         </div>`
         } else if (this.language == "Duits") {
-            htmlString = `<img  class="myTrain" src="./../img/" alt="your train">
+            htmlString = `
+            <div class="myTrain">
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            </div>
+
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -983,13 +1130,14 @@ let endOptions = {
             Bevor Sie losfahren, gebe ich Ihnen Ihren eigenen Shaffnerkappe.   
             </p>
             <p>
-            Möchten Sie ein Selfie mit ihm machen? 
+            Möchten Sie ein <font color="#6AB0CD">Selfie</font> mit ihm machen? 
             </p>
             </div>
             <div id="choice">
                 <p id="yes" class="buttons smaller">Ja</p>
                 <p id="no" class="buttons smaller">Keine</p>
             </div>
+        </div>
         </div>`
         }
 
@@ -1203,7 +1351,7 @@ let endOptions = {
             <form action="submit" id="formName" class="mailForm">
                 <input type="text" id="email" class="formLayout" placeholder="your e-mail" required>
                 <div id="confirmation">
-                    <p> Your file has been sent </p>
+                    <p> Your file has been <font color="#6AB0CD">sent</font>!</p>
                 </div>
                 <div>
                         <p id="send" class="buttons">Send</p>
@@ -1219,7 +1367,7 @@ let endOptions = {
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="uw e-mail" required>
             <div id="confirmation">
-                <p> Uw bestand is verzonden </p>
+                <p> Uw bestand is <font color="#6AB0CD">verzonden</font>!</p>
             </div>
             <div>
                     <p id="send" class="buttons">Send</p>
@@ -1235,7 +1383,7 @@ let endOptions = {
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="votre courriel" required>
             <div id="confirmation">
-                <p>  Votre fichier a été envoyé  </p>
+                <p>  Votre fichier a été <font color="#6AB0CD">envoyé</font>!</p>
             </div>
             <div>
                     <p id="send" class="buttons">Envoyer</p>
@@ -1251,7 +1399,7 @@ let endOptions = {
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="Ihre E-Mail" required>
             <div id="confirmation">
-                <p>  Ihre Datei wurde gesendet  </p>
+                <p>  Ihre Datei wurde <font color="#6AB0CD">gesendet</font>!</p>
             </div>
             <div>
                     <p id="send" class="buttons">Senden</p>
@@ -1286,7 +1434,7 @@ let endOptions = {
                  });
                 */
 
-                 /*To go back*/
+                /*To go back*/
                 document.getElementById('done').addEventListener('click', (e) => {
                     this.doSomething();
                 })

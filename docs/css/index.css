@@ -49,6 +49,7 @@ body {
     border: none;
     box-shadow: 2.4px 2.4px 3.2px var(--orange);
     padding: 5px 0;
+    color: white;
 }
 
 .wider {
@@ -154,12 +155,17 @@ body {
     border-radius: 25px;
 }
 
+#conducteurText p {
+    font-weight: 700;
+    color: #AF793F
+}
+
 #nameText {
     margin: auto;
     border-radius: 25px;
     padding: 12.5px 15px;
 
-    background-color: var(--white);
+    background-color: #F2E5D8;
     width: 225px;
 
     color: var(--black);
@@ -284,16 +290,14 @@ body {
     flex-wrap: wrap;
 
     width: 90%;
-    margin-left: 8%;
-    margin-right: 8%;
     padding: 0%;
-
     margin-top: 10vh;
+    margin-left: 6%;
 }
 
 #colours img {
-    width: 65px;
-    margin: 5px 5px;
+    width: 80px;
+    margin: 5px 0px;
 }
 
 /*TEXT*/
@@ -339,12 +343,26 @@ body {
 
 #choice p {
     margin: 15px 0;
+    color: white;
 }
 
 .myTrain {
-    width: 55%;
-    display: block;
-    margin: 10px auto 20px;
+    position: relative;
+}
+
+.myTrain img {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.myTrain img:nth-child(4) {
+    margin-top: 30px;
+}
+
+#lowerText {
+    padding-top: 50%;
 }
 
 /*SELFIE*/
