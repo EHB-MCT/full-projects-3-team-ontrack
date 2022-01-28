@@ -1271,7 +1271,7 @@ let endOptions = {
                 <p id="preview" class="buttons">Voorbeeld trein</p>
                 <p id="print" class="buttons">Sjabloon afdrukken</p>
                 <p id="email" class="buttons">E-mail</p>
-                <p id="build" class="buttons">Opnieuw bouwen</p>
+                <p id="build" class="buttons">Bouw opnieuw</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
         } else if (this.language == "Frans") {
