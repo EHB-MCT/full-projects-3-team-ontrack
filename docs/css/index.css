@@ -358,30 +358,8 @@ body {
 }
 
 .myTrain img:nth-child(4) {
-    margin-top: 30px;
-}
-
-
-.myTrainPreview {
-    position: relative;
-}
-
-.preview .myTrainPreview img {
-    position: absolute;
-    left: 0;
-    margin: auto;
-    width: 100%;
-}
-
-.preview .myTrainPreview img:nth-child(1) {
-    width: 100%;
-}
-
-
-.preview .myTrainPreview img:nth-child(4) {
-    width: 92.5%;
-    margin-top: 35px;
-    left: 4px;
+    margin-top: 50px;
+    right: 40px;
 }
 
 #lowerText {
@@ -429,6 +407,28 @@ body {
 .preview img:first-of-type {
     width: 80px;
     margin-bottom: 30%;
+}
+
+.myTrainPreview {
+    position: relative;
+}
+
+.preview .myTrainPreview img {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.preview .myTrainPreview img:nth-child(1) {
+    width: 100%;
+}
+
+
+.preview .myTrainPreview img:nth-child(4) {
+    width: 92.5%;
+    margin-top: 35px;
+    left: 4px;
 }
 
 /*PRINT*/
