@@ -361,6 +361,29 @@ body {
     margin-top: 30px;
 }
 
+
+.myTrainPreview {
+    position: relative;
+}
+
+.preview .myTrainPreview img {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.preview .myTrainPreview img:nth-child(1) {
+    width: 100%;
+}
+
+
+.preview .myTrainPreview img:nth-child(4) {
+    width: 92.5%;
+    margin-top: 35px;
+    left: 4px;
+}
+
 #lowerText {
     padding-top: 50%;
 }
@@ -423,11 +446,15 @@ body {
 .print img {
     width: 50%;
     margin: auto;
-    margin-bottom: 25%;
+    margin-bottom: 5%;
 }
 
 .print img:first-of-type {
     width: 80px;
+}
+
+.print img:last-of-type {
+    width: 75%;
 }
 
 /*EMAIL*/

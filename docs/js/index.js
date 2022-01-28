@@ -40,8 +40,8 @@ let index = {
                             </p>
                             </div>
                         </div>
-                <form action="submit" id="formName">
-                    <input type="text" id="username" class="formLayout" placeholder="your name" required>
+                <form autocomplete="off" action="submit" id="formName">
+                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="your name" required>
                     <div class="buttons">
                         <p id="next">Next</p>
                     </div>
@@ -66,8 +66,8 @@ let index = {
                         </p>
                     </div>
                 </div>
-                <form action="submit" id="formName">
-                    <input type="text" id="username" class="formLayout" placeholder="jouw naam" required>
+                <form autocomplete="off" action="submit" id="formName">
+                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="jouw naam" required>
                     <div class="buttons">
                         <p id="next">Volgende</p>
                     </div>
@@ -93,8 +93,8 @@ let index = {
                         </p>
                     </div>
                 </div>
-                <form action="submit" id="formName">
-                    <input type="text" id="username" class="formLayout" placeholder="votre nom" required>
+                <form autocomplete="off" action="submit" id="formName">
+                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="votre nom" required>
                     <div class="buttons">
                         <p id="next">Suivant</p>
                     </div>
@@ -121,8 +121,8 @@ let index = {
                             </p>
                             </div>
                     </div>
-                    <form action="submit" id="formName">
-                        <input type="text" id="username" class="formLayout" placeholder="dein Name" required>
+                    <form autocomplete="off" action="submit" id="formName">
+                        <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="dein Name" required>
                         <div class="buttons">
                             <p id="next">nächste</p>
                         </div>
@@ -1250,7 +1250,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Preview train</p>
-                <p id="print" class="buttons">Print sticker</p>
+                <p id="print" class="buttons">Print template</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Build again</p>
                 <p id="stop" class="buttons">Quit</p>
@@ -1269,7 +1269,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Voorbeeld trein</p>
-                <p id="print" class="buttons">Sticker afdrukken</p>
+                <p id="print" class="buttons">Sjabloon afdrukken</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Opnieuw bouwen</p>
                 <p id="stop" class="buttons">Quit</p>
@@ -1289,7 +1289,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Exemple de train</p>
-                <p id="print" class="buttons">Imprimer l'autocollant</p>
+                <p id="print" class="buttons">Imprimer le modèle</p>
                 <p id="email" class="buttons">Courriel</p>
                 <p id="build" class="buttons">Reconstruire</p>
                 <p id="stop" class="buttons">Quit</p>
@@ -1309,7 +1309,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Beispiel für Zug</p>
-                <p id="print" class="buttons">Aufkleber drucken</p>
+                <p id="print" class="buttons">schablone drucken</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Neu bauen</p>
                 <p id="stop" class="buttons">Quit</p>
@@ -1448,36 +1448,37 @@ let endOptions = {
         document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
 
         let htmlString = ` `;
+
         if (this.language == "Engels") {
             htmlString = `
                 <div class="print">
-                    <p>Print sticker</p>
+                    <p>Print template</p>
                     <img src="./../img/print.png" alt="print icon">
-                    <img src="./../" alt="your train">
+                    <img src="./../img/template.png" alt="template of train">   
                     <p id="print" class="buttons">Print</p>
                 </div>`
         } else if (this.language == "Nederlands") {
             htmlString = `
             <div class="print">
-                    <p>Sticker afdrukken</p>
+                    <p>Print sjabloon</p>
                     <img src="./../img/print.png" alt="print icon">
-                    <img src="./../" alt="your train">
+                    <img src="./../img/template.png" alt="template of train">   
                     <p id="print" class="buttons">Print</p>
                 </div>`
         } else if (this.language == "Frans") {
             htmlString = `
             <div class="print">
-                    <p>Imprimer l'autocollant</p>
+                    <p>Imprimer modéle</p>
                     <img src="./../img/print.png" alt="print icon">
-                    <img src="./../" alt="your train">
+                    <img src="./../img/template.png" alt="template of train">   
                     <p id="print"  class="buttons">Imprimer</p>
                 </div>`
         } else if (this.language == "Duits") {
             htmlString = `
             <div class="print">
-                    <p>Aufkleber drucken</p>
+                    <p>Schablone drucken</p>
                     <img src="./../img/print.png" alt="print icon">
-                    <img src="./../" alt="your train">
+                    <img src="./../img/template.png" alt="template of train">   
                     <p id="print" class="buttons">Drucken</p>
                 </div>`
         }
@@ -1488,7 +1489,7 @@ let endOptions = {
         })
         document.getElementById('print').addEventListener('click', (e) => {
             // conducteur moet nog vervangen worden door trein-  
-            printJS('./../img/conducteur.png', 'image');
+            printJS('./../img/template.png', 'image');
             setTimeout(function () {
                 endOptions.doSomething()
             }, 4000);
@@ -1500,33 +1501,59 @@ let endOptions = {
         document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
 
         let htmlString = ` `;
+
+        let wagon2 = localStorage.getItem("wagon2")
+        let wagon1 = localStorage.getItem("wagon1")
+        let front = localStorage.getItem("front")
+        let wheels = localStorage.getItem("wheels")
+
         if (this.language == "Engels") {
             htmlString = `
                 <div class="preview">
                     <p>Preview train</p>
                     <img src="./../img/train.png" alt="train icon">
-                    <img src="./../" alt="your train">
+                    <div class="myTrainPreview">
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                    </div>
                 </div>`
         } else if (this.language == "Nederlands") {
             htmlString = `
             <div class="preview">
                     <p>voorbeeld trein</p>
                     <img src="./../img/train.png" alt="train icon">
-                    <img src="./../" alt="your train">
+                    <div class="myTrainPreview">
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                     </div>
                 </div>`
         } else if (this.language == "Frans") {
             htmlString = `
             <div class="preview">
                     <p>Exemple de train</p>
                     <img src="./../img/train.png" alt="train icon">
-                    <img src="./../" alt="your train">
+                    <div class="myTrainPreview">
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            </div>
                 </div>`
         } else if (this.language == "Duits") {
             htmlString = `
             <div class="preview">
                     <p>Beispiel für Zug</p>
                     <img src="./../img/train.png" alt="train icon">
-                    <img src="./../" alt="your train">
+                    <div class="myTrainPreview">
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            </div>
                 </div>`
         }
         this.htmlPage.innerHTML = htmlString;
