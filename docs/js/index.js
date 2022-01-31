@@ -970,6 +970,7 @@ let trainMaker = {
             type = "O"
         }
 
+        
         document.getElementById('next').addEventListener('click', (e) => {
             let type = ""
 
@@ -1022,14 +1023,20 @@ let endOptions = {
         let wagon1 = localStorage.getItem("wagon1")
         let front = localStorage.getItem("front")
         let wheels = localStorage.getItem("wheels")
+        
+        let wagonType2 =  wagon2.substring(0,2);
+        let wagonType1 =  wagon1.substring(0,2);
+        let frontType = front.substring(0,2);
+        let wheelsType = wheels.substring(0,2);
+    
 
         if (this.language == "Engels") {
             htmlString = ` 
             <div class="myTrain">
-                <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+                <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}" >
+                <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
         <div id="lowerText">  
@@ -1055,10 +1062,10 @@ let endOptions = {
         } else if (this.language == "Nederlands") {
             htmlString = ` 
             <div class="myTrain">
-            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}" >
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
         <div id="lowerText">  
@@ -1084,10 +1091,10 @@ let endOptions = {
         } else if (this.language == "Frans") {
             htmlString = `
             <div class="myTrain">
-            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
         <div id="lowerText">  
@@ -1113,10 +1120,10 @@ let endOptions = {
         } else if (this.language == "Duits") {
             htmlString = `
             <div class="myTrain">
-            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
         <div id="lowerText">  
@@ -1507,16 +1514,21 @@ let endOptions = {
         let front = localStorage.getItem("front")
         let wheels = localStorage.getItem("wheels")
 
+        let wagonType2 =  wagon2.substring(0,2);
+        let wagonType1 =  wagon1.substring(0,2);
+        let frontType = front.substring(0,2);
+        let wheelsType = wheels.substring(0,2);
+
         if (this.language == "Engels") {
             htmlString = `
                 <div class="preview">
                     <p>Preview train</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                    <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+                    <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                    <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}" >
+                    <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
                     </div>
                 </div>`
         } else if (this.language == "Nederlands") {

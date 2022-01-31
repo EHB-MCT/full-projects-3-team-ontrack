@@ -352,18 +352,78 @@ body {
 
 .myTrain img {
     position: absolute;
-    width: 100%;
+    width: 60%;
     margin: auto;
     margin-top: 10px;
+    padding-left: 7.5px;
+}
+
+.myTrain img:nth-child(1) {
+    margin-top: 10px;
+    right:10%;
+}
+
+.myTrain img:nth-child(2) {
+    margin-top: 10px;
+    right: 10%;
 }
 
 .myTrain img:nth-child(4) {
-    margin-top: 50px;
-    right: 40px;
+    width: 47.5%;
+    margin-top: 14.5%;
+    right: 20%;
 }
 
 #lowerText {
     padding-top: 50%;
+}
+
+/*POSITION TRAIN*/
+#M1 {
+    width: 52.5%;
+    right: 34%;
+    margin-top: 7.5px;
+}
+
+#M2 {
+    width: 45%;
+    right: 11.5%;
+    margin-top: 18px;
+}
+
+#M3 {
+    width: 45%;
+    right: 10%;
+    margin-top: 17px;
+}
+
+#M4 {
+    margin-top: 12%;
+}
+
+#O1 {
+    width: 57.5%;
+    margin-top:-3.5%;
+    right:31%;
+}
+
+#O2 {
+    width: 42.5%;
+    margin-top:5%;
+    right:13%;
+}
+
+#O3 {
+    width: 40%;
+    margin-top:6%;
+    right:13%;
+}
+
+#O4 {
+    width: 55%;
+    right: 16%;
+    margin-top: 10%;
+    transform: rotate(2.5deg);
 }
 
 /*SELFIE*/
@@ -408,7 +468,7 @@ body {
     width: 80px;
     margin-bottom: 30%;
 }
-
+/*trein*/
 .myTrainPreview {
     position: relative;
 }
@@ -423,7 +483,6 @@ body {
 .preview .myTrainPreview img:nth-child(1) {
     width: 100%;
 }
-
 
 .preview .myTrainPreview img:nth-child(4) {
     width: 92.5%;
