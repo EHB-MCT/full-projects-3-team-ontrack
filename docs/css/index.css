@@ -360,7 +360,7 @@ body {
 
 .myTrain img:nth-child(1) {
     margin-top: 10px;
-    right:10%;
+    right: 10%;
 }
 
 .myTrain img:nth-child(2) {
@@ -403,20 +403,20 @@ body {
 
 #O1 {
     width: 57.5%;
-    margin-top:-3.5%;
-    right:31%;
+    margin-top: -3.5%;
+    right: 31%;
 }
 
 #O2 {
     width: 42.5%;
-    margin-top:5%;
-    right:13%;
+    margin-top: 5%;
+    right: 13%;
 }
 
 #O3 {
     width: 40%;
-    margin-top:6%;
-    right:13%;
+    margin-top: 6%;
+    right: 13%;
 }
 
 #O4 {
@@ -466,8 +466,9 @@ body {
 
 .preview img:first-of-type {
     width: 80px;
-    margin-bottom: 30%;
+    margin-bottom: 20%;
 }
+
 /*trein*/
 .myTrainPreview {
     position: relative;
@@ -476,18 +477,73 @@ body {
 .preview .myTrainPreview img {
     position: absolute;
     left: 0;
-    margin: auto;
-    width: 100%;
+    /* margin: auto; */
+    width: 65%;
 }
 
 .preview .myTrainPreview img:nth-child(1) {
-    width: 100%;
+    left: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+.preview .myTrainPreview img:nth-child(2) {
+    left: 30%;
+    padding: 0;
+    margin: 0;
 }
 
 .preview .myTrainPreview img:nth-child(4) {
-    width: 92.5%;
-    margin-top: 35px;
-    left: 4px;
+    margin-top: 11%;
+    left: 32%;
+    width: 55%;
+}
+.preview #M1 {
+    width: 61%;
+    left:8%;
+    margin-top: -2.5%;
+}
+
+.preview #M2 {
+    width: 57%;
+    left:40%;
+    margin-top: -1%;
+}
+
+.preview #M3 {
+    width: 52%;
+    margin-top: 0.5%;
+    left: 45%;
+}
+
+.preview #M4 {
+    width:67%;
+    left:20%;
+    margin-top:6%;
+}
+
+.preview #O1 {
+    width: 61%;
+    left:10%;
+    margin-top: -6%;
+}
+
+.preview #O2 {
+    width: 50%;
+    left:45%;
+    margin-top: 0.5%;
+}
+
+.preview #O3 {
+    width: 47.5%;
+    margin-top: 1.5%;
+    left: 47%;
+}
+
+.preview #O4 {
+    width:62%;
+    left:27.5%;
+    margin-top: 7.25%;
 }
 
 /*PRINT*/
