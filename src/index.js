@@ -53,7 +53,7 @@ let index = {
                         <form autocomplete="off" action="submit" id="formName">
                             <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="your name" required>
                             <div class="buttons">
-                                <p id="next" action="submit">Next</p>
+                                <p id="next" >Next</p>
                             </div>
                         </form>
                     </div>`
@@ -154,7 +154,12 @@ let index = {
 
     },
     getNameAndShowText() {
-        document.getElementById('formName').addEventListener('submit', (e) => {
+        document.getElementById('username').addEventListener('keypress', (e) => {
+            if (e.key === "Enter") {     
+                e.preventDefault();
+            }
+        })
+        document.getElementById('formName').addEventListener('click', (e) => {
             e.preventDefault();
             let name = document.getElementById('username').value;
             localStorage.setItem("name", name)
@@ -1421,6 +1426,12 @@ let endOptions = {
         </form>`
         }
         this.htmlPage.innerHTML = htmlString;
+
+        document.getElementById('email').addEventListener('keypress', (e) => {
+            if (e.key === "Enter") {     
+                e.preventDefault();
+            }
+        })
 
         document.getElementById('send').addEventListener('click', (e) => {
             let mail = document.getElementById('email').value
