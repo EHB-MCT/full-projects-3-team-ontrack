@@ -53,7 +53,7 @@ let index = {
                         <form autocomplete="off" action="submit" id="formName">
                             <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="your name" required>
                             <div class="buttons">
-                                <p id="next">Next</p>
+                                <p id="next" action="submit">Next</p>
                             </div>
                         </form>
                     </div>`
@@ -154,7 +154,7 @@ let index = {
 
     },
     getNameAndShowText() {
-        document.getElementById('formName').addEventListener('click', (e) => {
+        document.getElementById('formName').addEventListener('submit', (e) => {
             e.preventDefault();
             let name = document.getElementById('username').value;
             localStorage.setItem("name", name)
