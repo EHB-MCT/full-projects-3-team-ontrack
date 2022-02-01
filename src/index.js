@@ -285,7 +285,7 @@ let index = {
                 }
                 document.getElementById('outside').innerHTML = htmlString;
                 document.getElementById('build').addEventListener('click', (e) => {
-                    window.location.href = "html/startTrain.html"
+                    window.location.href = `/${startingpoint}/html/startTrain.html`
                 })
 
             }
@@ -441,6 +441,8 @@ let trainMaker = {
         } else if (this.slideIndex == 2) {
             type = "O"
         }
+
+        localStorage.setItem('front', `${type}1_${this.colorFront}`)
 
 
         document.getElementById('next').addEventListener('click', (e) => {
@@ -642,6 +644,8 @@ let trainMaker = {
             type = "O"
         }
 
+        localStorage.setItem('wagon1', `${type}2_${this.colorWagon1}`)
+
         document.getElementById('next').addEventListener('click', (e) => {
             if (this.slideIndex == 0) {
                 type = "C"
@@ -819,6 +823,8 @@ let trainMaker = {
             type = "O"
         }
 
+        localStorage.setItem('wagon2', `${type}3_${this.colorWagon2}`)
+
         document.getElementById('next').addEventListener('click', (e) => {
             if (this.slideIndex == 0) {
                 type = "C"
@@ -986,6 +992,7 @@ let trainMaker = {
             type = "O"
         }
 
+        localStorage.setItem('wheels', `${type}4_${this.colorWheel}`)
 
         document.getElementById('next').addEventListener('click', (e) => {
             let type = ""
@@ -1024,7 +1031,7 @@ let trainMaker = {
         })
 
         document.getElementById('nextOption').addEventListener('click', (e) => {
-            window.location.href = '/docs/html/endTrain.html'
+            window.location.href = `/${startingpoint}/html/endTrain.html`
         })
     }
 }
@@ -1346,10 +1353,10 @@ let endOptions = {
             this.sendPhoto();
         })
         document.getElementById("build").addEventListener('click', (e) => {
-            document.location.href = "/docs/html/startTrain.html"
+            document.location.href = `/${startingpoint}/html/startTrain.html`
         })
         document.getElementById("stop").addEventListener('click', (e) => {
-            document.location.href = "/docs"
+            document.location.href = `/${startingpoint}`
         })
     },
     sendPhoto() {
@@ -1611,13 +1618,7 @@ let endOptions = {
 
 /* Checking if your local on or github pages */
 let fileName = window.location.pathname.split("/")
-let startingpoint = fileName[0];
-console.log(fileName)
-console.log(startingpoint)
-
-
-
-/*https://ehb-mct.github.io/full-projects-3-team-ontrack/*/
+let startingpoint = fileName[1];
 
 /* Checking the page the user is on */
 let indexpage = document.getElementById("indexPage");
@@ -1634,7 +1635,7 @@ let quitButton = document.getElementById('quitButton');
 if (quitButton) {
     quitButton.addEventListener('click', (e) => {
         window.localStorage.clear();
-        window.location.href = "/docs";
+        window.location.href = `/${startingpoint}`;
     })
 }
 
