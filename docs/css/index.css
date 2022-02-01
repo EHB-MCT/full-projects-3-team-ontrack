@@ -40,8 +40,6 @@ body {
     INDEX
 **************/
 /*BUTTONS*/
-
-
 .buttons {
     background-color: #C77400;
     width: 60%;
@@ -56,6 +54,8 @@ body {
 
 .wider {
     width: 80%;
+    font-size: 1.5em;
+    font-weight: bolder;
 }
 
 .smaller {
@@ -127,8 +127,9 @@ body {
 }
 
 #logoCloud {
-    width: 100%;
-    top: 0;
+    width: 95%;
+    margin: 0 2.5%;
+    top: 5%;
     position: absolute;
 }
 
@@ -468,13 +469,13 @@ body {
 
 .preview img:first-of-type {
     width: 80px;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
 }
 
 /*trein preview*/
 .myTrainPreview {
     position: relative;
-    height: 35vh;
+    height: 40vh;
 }
 
 .preview .myTrainPreview img {

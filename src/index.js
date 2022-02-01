@@ -6,11 +6,11 @@ import {
     saveAs
 } from 'file-saver';
 
-
 "use strict";
 
 /** Index.html - Choose language **/
 let index = {
+    /*Start page*/
     pressStart() {
         window.localStorage.clear();
         document.getElementById('quitButton').style.display = "none"
@@ -21,6 +21,7 @@ let index = {
             this.checkLanguage();
         })
     },
+    /*Language page*/
     checkLanguage() {
         document.getElementById('languages').addEventListener('click', (e) => {
             localStorage.setItem('language', e.target.id);
@@ -28,6 +29,7 @@ let index = {
             if (language != "languages") {
                 let htmlString = ``;
                 document.getElementById('outside').innerHTML = ``;
+                /*English*/
                 if (language == "Engels") {
                     htmlString = ` 
                     <div id="name">  
@@ -48,68 +50,74 @@ let index = {
                             </p>
                             </div>
                         </div>
-                <form autocomplete="off" action="submit" id="formName">
-                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="your name" required>
-                    <div class="buttons">
-                        <p id="next">Next</p>
-                    </div>
-                </form>
-            </div>`
-                } else if (language == "Nederlands") {
-                    htmlString = ` <div id="name">   
-                    <div id="conducteurText">
-                    <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
-                    <div id="nameText">
-                        <p>
-                            Hallo! Mijn naam is Guido!
-                        </p>
-                        <p>
-                            Ik ben Train World's trein conducteur.
-                        </p>
-                        <p>
-                        Jij moet de nieuwe conducteur zijn die ik heb ingehuurd.
-                        </p>
-                        <p>
-                            Wat is jouw <font color="#6AB0CD">naam</font>?
-                        </p>
-                    </div>
-                </div>
-                <form autocomplete="off" action="submit" id="formName">
-                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="jouw naam" required>
-                    <div class="buttons">
-                        <p id="next">Volgende</p>
-                    </div>
-                </form>
-            </div>
-            `
-                } else if (language == "Frans") {
-                    htmlString = ` <div id="name">  
-                     <div id="conducteurText">
-                    <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
-                    <div id="nameText">
-                        <p>
-                        Bonjour ! Mon nom est Guido.
-                        </p>
-                        <p>
-                        Je suis le conducteur de train de Train World.
-                        </p>
-                        <p>
-                        Vous devez être le nouveau conducteur que j'ai engagé.
-                        </p>
-                        <p>
-                        Quel est votre <font color="#6AB0CD">nom</font> ?
-                        </p>
-                    </div>
-                </div>
-                <form autocomplete="off" action="submit" id="formName">
-                    <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="votre nom" required>
-                    <div class="buttons">
-                        <p id="next">Suivant</p>
-                    </div>
-                </form>
-            </div>
-           `
-                } else if (language == "Duits") {
+                        <form autocomplete="off" action="submit" id="formName">
+                            <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="your name" required>
+                            <div class="buttons">
+                                <p id="next">Next</p>
+                            </div>
+                        </form>
+                    </div>`
+                } 
+                /*Dutch*/
+                else if (language == "Nederlands") {
+                    htmlString = ` 
+                    <div id="name">   
+                        <div id="conducteurText">
+                            <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                            <div id="nameText">
+                                <p>
+                                Hallo! Mijn naam is Guido!
+                                </p>
+                                <p>
+                                Ik ben Train World's trein conducteur.
+                                </p>
+                                <p>
+                                Jij moet de nieuwe conducteur zijn die ik heb ingehuurd.
+                                </p>
+                                <p>
+                                Wat is jouw <font color="#6AB0CD">naam</font>?
+                                </p>
+                            </div>
+                        </div>
+                        <form autocomplete="off" action="submit" id="formName">
+                            <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="jouw naam" required>
+                            <div class="buttons">
+                                <p id="next">Volgende</p>
+                            </div>
+                        </form>
+                    </div>`
+                }
+                /*French*/
+                else if (language == "Frans") {
+                    htmlString = ` 
+                    <div id="name">  
+                        <div id="conducteurText">
+                            <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                            <div id="nameText">
+                                <p>
+                                Bonjour ! Mon nom est Guido.
+                                </p>
+                                <p>
+                                Je suis le conducteur de train de Train World.
+                                </p>
+                                <p>
+                                Vous devez être le nouveau conducteur que j'ai engagé.
+                                </p>
+                                <p>
+                                Quel est votre <font color="#6AB0CD">nom</font> ?
+                                </p>
+                            </div>
+                        </div>
+                        <form autocomplete="off" action="submit" id="formName">
+                            <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="votre nom" required>
+                            <div class="buttons">
+                                <p id="next">Suivant</p>
+                            </div>
+                        </form>
+                    </div>`
+                } 
+                /*German*/
+                else if (language == "Duits") {
                     htmlString = ` 
                     <div id="name">  
                         <div id="conducteurText">
@@ -1267,8 +1275,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Download train</p>
-                <p id="print" class="buttons">Print template</p>
-                <p id="email" class="buttons">E-mail</p>
+                <p id="email" class="buttons">Send template</p>
                 <p id="build" class="buttons">Build again</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
@@ -1286,8 +1293,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Download trein</p>
-                <p id="print" class="buttons">Sjabloon afdrukken</p>
-                <p id="email" class="buttons">E-mail</p>
+                <p id="email" class="buttons">Verstuur sjabloon</p>
                 <p id="build" class="buttons">Bouw opnieuw</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
@@ -1306,8 +1312,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Télécharger le train</p>
-                <p id="print" class="buttons">Imprimer le modèle</p>
-                <p id="email" class="buttons">Courriel</p>
+                <p id="email" class="buttons">Envoyer le modèle<</p>
                 <p id="build" class="buttons">Reconstruire</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
@@ -1326,8 +1331,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Zug herunterladen</p>
-                <p id="print" class="buttons">schablone drucken</p>
-                <p id="email" class="buttons">E-mail</p>
+                <p id="email" class="buttons">die Schablone senden</p>
                 <p id="build" class="buttons">Neu bauen</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
@@ -1337,9 +1341,6 @@ let endOptions = {
 
         document.getElementById("preview").addEventListener('click', (e) => {
             this.showPreview()
-        })
-        document.getElementById("print").addEventListener('click', (e) => {
-            this.print()
         })
         document.getElementById("email").addEventListener('click', (e) => {
             this.sendPhoto();
@@ -1367,9 +1368,6 @@ let endOptions = {
             
             <form action="submit" id="formName" class="mailForm">
                 <input type="text" id="email" class="formLayout" placeholder="your e-mail" required>
-                <div id="confirmation">
-                    <p> Your file has been <font color="#6AB0CD">sent</font>!</p>
-                </div>
                 <div>
                         <p id="send" class="buttons">Send</p>
                         <p id="done" class="buttons">Done</p>
@@ -1383,12 +1381,9 @@ let endOptions = {
         
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="uw e-mail" required>
-            <div id="confirmation">
-                <p> Uw bestand is <font color="#6AB0CD">verzonden</font>!</p>
-            </div>
             <div>
                     <p id="send" class="buttons">Send</p>
-                    <p id="done" class="buttons">Done</p>
+                    <p id="done" class="buttons">Klaar</p>
             </div>
         </form>`
         } else if (this.language == "Frans") {
@@ -1399,9 +1394,6 @@ let endOptions = {
         
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="votre courriel" required>
-            <div id="confirmation">
-                <p>  Votre fichier a été <font color="#6AB0CD">envoyé</font>!</p>
-            </div>
             <div>
                     <p id="send" class="buttons">Envoyer</p>
                     <p id="done" class="buttons">Terminé</p>
@@ -1415,9 +1407,6 @@ let endOptions = {
         
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="Ihre E-Mail" required>
-            <div id="confirmation">
-                <p>  Ihre Datei wurde <font color="#6AB0CD">gesendet</font>!</p>
-            </div>
             <div>
                     <p id="send" class="buttons">Senden</p>
                     <p id="done" class="buttons">Erledigt</p>
@@ -1430,16 +1419,65 @@ let endOptions = {
             let mail = document.getElementById('email').value
 
             if (mail) {
-                document.getElementById('email').style.display = "none";
-                document.getElementById('confirmation').style.display = "inherit";
                 document.getElementById('send').style.display = "none";
                 document.getElementById('done').style.display = "inherit";
+
+                let language = localStorage.getItem('language')
+
+                let message = ""
+                let url = ""
+                let startMessage = ""
+                let endMessage = ""
+                
+                /*Select right message*/
+                if (language == "Engels") {
+                    message = "With this template you can build your own train. Give it color, cut it out and fold it like a real train. Enjoy building your own train. "
+                } else if (language == "Nederland") {
+                    message = "Met dit sjabloon kun je je eigen trein bouwen. Geef het kleur, knip het uit en vouw het als een echte trein. Veel plezier met het bouwen van je eigen trein. "
+                } else if (language == "Frans") {
+                    message = "Avec ce modèle, tu peux construire ton propre train. Colorie-le, découpe-le et plie-le comme un vrai train. Amuse-toi à construire ton propre train."
+                } else if (language == "Duits") {
+                    message = "Mit dieser Vorlage kannst du deinen eigenen Zug bauen. Färbe sie ein, schneide sie aus und falte sie wie einen echten Zug. Viel Spaß beim Bauen deines eigenen Zuges."
+                }
+                /*Select right greeting*/
+                if (language == "Engels") {
+                    startMessage = `Hello ${localStorage.getItem('name')}`
+                } else if (language == "Nederland") {
+                    startMessage =  `Hallo ${localStorage.getItem('name')}`
+                } else if (language == "Frans") {
+                    startMessage =  `Bonjour ${localStorage.getItem('name')}`
+                } else if (language == "Duits") {
+                    startMessage =  `Hallo ${localStorage.getItem('name')}`
+                }
+                /*Select right goodbye*/
+                if (language == "Engels") {
+                    endMessage = `Hope to see you again ${localStorage.getItem('name')}!`
+                } else if (language == "Nederland") {
+                    endMessage = `Hopelijk tot ziens ${localStorage.getItem('name')}!`
+                } else if (language == "Frans") {
+                    endMessage = `Au plaisir de vous revoir ${localStorage.getItem('name')}!`
+                } else if (language == "Duits") {
+                    endMessage = `Ich hoffe, Sie wiederzusehen ${localStorage.getItem('name')}!`
+                }
+                
+                /*Select right template*/
+                if (localStorage.getItem('front').substring(0, 1) == "C") {
+                    url = "https://i.pinimg.com/564x/99/3d/ab/993dabb98762f5be552bc106fc28e68e.jpg"
+                    console.log(url);
+                } else if (localStorage.getItem('front').substring(0, 1) == "O") {
+                    url = "https://i.pinimg.com/564x/07/74/fc/0774fc794893dce94cd38ee756c88590.jpg"
+                } else if (localStorage.getItem('front').substring(0, 1) == "M") {
+                    url = "https://i.pinimg.com/564x/8b/35/15/8b35159ef4d236600577e3075c055e47.jpg"
+                }
 
                 /*Send mail*/
                 var templateParams = {
                     user_name: localStorage.getItem("name"),
                     user_email: mail,
-                    message: localStorage.getItem('completeTrain')
+                    image: url,
+                    message,
+                    startMessage,
+                    endMessage
                 };
                 emailjs.send('service_sendTrain', 'sendingPicture', templateParams)
                     .then(function (response) {
@@ -1447,7 +1485,7 @@ let endOptions = {
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
-
+                    
                 /*To go back*/
                 document.getElementById('done').addEventListener('click', (e) => {
                     this.doSomething();
@@ -1455,59 +1493,6 @@ let endOptions = {
             }
         })
 
-    },
-    print() {
-        document.getElementById('headerInside').style.display = "none";
-        document.getElementById('backButton').style.display = "block";
-        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
-
-        let htmlString = ` `;
-
-        if (this.language == "Engels") {
-            htmlString = `
-                <div class="print">
-                    <p>Print template</p>
-                    <img src="./../img/print.png" alt="print icon">
-                    <img src="./../img/template.png" alt="template of train">   
-                    <p id="print" class="buttons">Print</p>
-                </div>`
-        } else if (this.language == "Nederlands") {
-            htmlString = `
-            <div class="print">
-                    <p>Print sjabloon</p>
-                    <img src="./../img/print.png" alt="print icon">
-                    <img src="./../img/template.png" alt="template of train">   
-                    <p id="print" class="buttons">Print</p>
-                </div>`
-        } else if (this.language == "Frans") {
-            htmlString = `
-            <div class="print">
-                    <p>Imprimer modéle</p>
-                    <img src="./../img/print.png" alt="print icon">
-                    <img src="./../img/template.png" alt="template of train">   
-                    <p id="print"  class="buttons">Imprimer</p>
-                </div>`
-        } else if (this.language == "Duits") {
-            htmlString = `
-            <div class="print">
-                    <p>Schablone drucken</p>
-                    <img src="./../img/print.png" alt="print icon">
-                    <img src="./../img/template.png" alt="template of train">   
-                    <p id="print" class="buttons">Drucken</p>
-                </div>`
-        }
-        this.htmlPage.innerHTML = htmlString;
-
-        document.getElementById('back').addEventListener('click', (e) => {
-            this.doSomething();
-        })
-        document.getElementById('print').addEventListener('click', (e) => {
-            // conducteur moet nog vervangen worden door trein-  
-            printJS('./../img/template.png', 'image');
-            setTimeout(function () {
-                endOptions.doSomething()
-            }, 4000);
-        })
     },
     showPreview() {
         document.getElementById('headerInside').style.display = "none";
@@ -1532,14 +1517,15 @@ let endOptions = {
                     <p data-html2canvas-ignore>Download train</p>
                     <img src="./../img/train.png" alt="train icon" data-html2canvas-ignore>
                     <div class="myTrainPreview">
-                    <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                    <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                    <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                    <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                    <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}" >
+                    <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                    <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+                    <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
                     </div>
                 </div>
                 <div>
                     <p class="buttons" id="download" data-html2canvas-ignore>Download</p>
+                    <p class="buttons" id="done" data-html2canvas-ignore>Done</p>
                 </div>`
         } else if (this.language == "Nederlands") {
             htmlString = `
@@ -1547,14 +1533,15 @@ let endOptions = {
                     <p>Download trein</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
                      </div>
                 </div>
                 <div>
                     <p class="buttons" id="download" data-html2canvas-ignore>Download</p>
+                    <p class="buttons" id="done" data-html2canvas-ignore>Klaar</p>
                 </div>`
         } else if (this.language == "Frans") {
             htmlString = `
@@ -1562,14 +1549,15 @@ let endOptions = {
                     <p>Télécharger le train</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
                     </div>
                 </div>
                 <div>
                     <p class="buttons" id="download" data-html2canvas-ignore>Télécharger</p>
+                    <p class="buttons" id="done" data-html2canvas-ignore>Terminé</p>
                 </div>`
         } else if (this.language == "Duits") {
             htmlString = `
@@ -1577,32 +1565,40 @@ let endOptions = {
                     <p>Zug herunterladen</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
                     </div>
                 </div>
                 <div>
                     <p class="buttons" id="download" data-html2canvas-ignore>Herunterladen</p>
+                    <p class="buttons" id="done" data-html2canvas-ignore>Erledigt</p>
                 </div>`
         }
         this.htmlPage.innerHTML = htmlString;
+        document.getElementById('done').style.display = "none"
 
-        console.log(document.body)
-        localStorage.setItem('completeTrain', document.body)
 
         document.getElementById('download').addEventListener('click', (e) => {
             document.getElementById('inside').style.backgroundImage = 'none'
-            html2canvas(document.body,{
+            document.getElementById('done').style.display = "inherit"
+            document.getElementById('download').style.display = "none"
+
+            console.log('click')
+
+            html2canvas(document.body, {
                 width: 400,
                 height: 260,
-              }).then(function (canvas) {
+            }).then(function (canvas) {
                 // Export canvas as a blob 
                 canvas.toBlob(function (blob) {
                     // Generate file download
                     window.saveAs(blob, `train_${localStorage.getItem('name')}.png`);
                     document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
+                    document.getElementById('done').addEventListener('click', (e) => {
+                        endOptions.doSomething();
+                    })
                 });
             });
         })
@@ -1612,6 +1608,8 @@ let endOptions = {
         })
     }
 }
+
+/* Checking if your local on or github pages */
 
 /* Checking the page the user is on */
 let indexpage = document.getElementById("indexPage");
