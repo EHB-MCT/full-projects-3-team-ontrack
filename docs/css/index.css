@@ -95,7 +95,7 @@ body {
     margin: auto auto 35px;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 2.4px 2.4px 3.2px var(--orange);
+    box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
 }
 
 #backButton p {
@@ -471,9 +471,10 @@ body {
     margin-bottom: 20%;
 }
 
-/*trein*/
+/*trein preview*/
 .myTrainPreview {
     position: relative;
+    height: 35vh;
 }
 
 .preview .myTrainPreview img {
@@ -500,15 +501,16 @@ body {
     left: 32%;
     width: 55%;
 }
+
 .preview #M1 {
     width: 61%;
-    left:8%;
+    left: 8%;
     margin-top: -2.5%;
 }
 
 .preview #M2 {
     width: 57%;
-    left:40%;
+    left: 40%;
     margin-top: -1%;
 }
 
@@ -519,20 +521,20 @@ body {
 }
 
 .preview #M4 {
-    width:67%;
-    left:20%;
-    margin-top:6%;
+    width: 67%;
+    left: 20%;
+    margin-top: 6%;
 }
 
 .preview #O1 {
     width: 61%;
-    left:10%;
+    left: 10%;
     margin-top: -6%;
 }
 
 .preview #O2 {
     width: 50%;
-    left:45%;
+    left: 45%;
     margin-top: 0.5%;
 }
 
@@ -543,8 +545,8 @@ body {
 }
 
 .preview #O4 {
-    width:62%;
-    left:27.5%;
+    width: 62%;
+    left: 27.5%;
     margin-top: 7.25%;
 }
 

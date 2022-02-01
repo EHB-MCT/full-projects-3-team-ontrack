@@ -2,7 +2,9 @@ import _ from 'lodash';
 import emailjs from '@emailjs/browser';
 emailjs.init('user_24dhpAFkPLUxQNORqiHVD');
 import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
+import {
+    saveAs
+} from 'file-saver';
 
 
 "use strict";
@@ -1045,7 +1047,7 @@ let endOptions = {
                 <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText" data-html2canvas-ignore>  
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1074,7 +1076,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText" data-html2canvas-ignore>  
+        <div id="lowerText">  
             <div id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
@@ -1103,7 +1105,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText" data-html2canvas-ignore>  
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1132,7 +1134,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText" data-html2canvas-ignore>  
+        <div id="lowerText">  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1156,13 +1158,6 @@ let endOptions = {
 
         this.htmlPage.innerHTML = htmlString;
 
-        html2canvas(document.body).then(function(canvas) {
-            // Export canvas as a blob 
-            canvas.toBlob(function(blob) {
-                // Generate file download
-                window.saveAs(blob, "yourwebsite_screenshot.png");
-            });
-        });
 
         document.getElementById("yes").addEventListener('click', (e) => {
             this.takePhoto();
@@ -1271,7 +1266,7 @@ let endOptions = {
                 </div>
             </div>
             <div id="choicesEnding">
-                <p id="preview" class="buttons">Preview train</p>
+                <p id="preview" class="buttons">Download train</p>
                 <p id="print" class="buttons">Print template</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Build again</p>
@@ -1290,7 +1285,7 @@ let endOptions = {
                 </div>
             </div>
             <div id="choicesEnding">
-                <p id="preview" class="buttons">Voorbeeld trein</p>
+                <p id="preview" class="buttons">Download trein</p>
                 <p id="print" class="buttons">Sjabloon afdrukken</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Bouw opnieuw</p>
@@ -1310,7 +1305,7 @@ let endOptions = {
                 </div>
             </div>
             <div id="choicesEnding">
-                <p id="preview" class="buttons">Exemple de train</p>
+                <p id="preview" class="buttons">Télécharger le train</p>
                 <p id="print" class="buttons">Imprimer le modèle</p>
                 <p id="email" class="buttons">Courriel</p>
                 <p id="build" class="buttons">Reconstruire</p>
@@ -1330,7 +1325,7 @@ let endOptions = {
                 </div>
             </div>
             <div id="choicesEnding">
-                <p id="preview" class="buttons">Beispiel für Zug</p>
+                <p id="preview" class="buttons">Zug herunterladen</p>
                 <p id="print" class="buttons">schablone drucken</p>
                 <p id="email" class="buttons">E-mail</p>
                 <p id="build" class="buttons">Neu bauen</p>
@@ -1356,7 +1351,7 @@ let endOptions = {
             document.location.href = "/docs"
         })
     },
-    sendPhoto(item) {
+    sendPhoto() {
         document.getElementById('backButton').style.display = "block";
         document.getElementById('headerInside').style.display = "none"
         document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/mailboxBackground.png)'
@@ -1444,7 +1439,7 @@ let endOptions = {
                 var templateParams = {
                     user_name: localStorage.getItem("name"),
                     user_email: mail,
-                    message: item
+                    message: localStorage.getItem('completeTrain')
                 };
                 emailjs.send('service_sendTrain', 'sendingPicture', templateParams)
                     .then(function (response) {
@@ -1534,19 +1529,22 @@ let endOptions = {
         if (this.language == "Engels") {
             htmlString = `
                 <div class="preview">
-                    <p>Preview train</p>
-                    <img src="./../img/train.png" alt="train icon">
+                    <p data-html2canvas-ignore>Download train</p>
+                    <img src="./../img/train.png" alt="train icon" data-html2canvas-ignore>
                     <div class="myTrainPreview">
-                    <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train" id="${wagonType2}">
-                    <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train" id="${wagonType1}">
-                    <img src="./../img/everything_together/fronts/${front}.png" alt="front of train" id="${frontType}" >
-                    <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
+                    <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                    <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                    <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                    <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
                     </div>
+                </div>
+                <div>
+                    <p class="buttons" id="download" data-html2canvas-ignore>Download</p>
                 </div>`
         } else if (this.language == "Nederlands") {
             htmlString = `
             <div class="preview">
-                    <p>voorbeeld trein</p>
+                    <p>Download trein</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
                         <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
@@ -1554,33 +1552,60 @@ let endOptions = {
                         <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
                         <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
                      </div>
+                </div>
+                <div>
+                    <p class="buttons" id="download" data-html2canvas-ignore>Download</p>
                 </div>`
         } else if (this.language == "Frans") {
             htmlString = `
             <div class="preview">
-                    <p>Exemple de train</p>
+                    <p>Télécharger le train</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
-            </div>
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                    </div>
+                </div>
+                <div>
+                    <p class="buttons" id="download" data-html2canvas-ignore>Télécharger</p>
                 </div>`
         } else if (this.language == "Duits") {
             htmlString = `
             <div class="preview">
-                    <p>Beispiel für Zug</p>
+                    <p>Zug herunterladen</p>
                     <img src="./../img/train.png" alt="train icon">
                     <div class="myTrainPreview">
-            <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
-            <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
-            <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
-            <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
-            </div>
+                        <img src="./../img/everything_together/wagon2/${wagon2}.png" alt="second wagon of train">
+                        <img src="./../img/everything_together/wagon1/${wagon1}.png" alt="first wagon of train">
+                        <img src="./../img/everything_together/fronts/${front}.png" alt="front of train">
+                        <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train"> 
+                    </div>
+                </div>
+                <div>
+                    <p class="buttons" id="download" data-html2canvas-ignore>Herunterladen</p>
                 </div>`
         }
         this.htmlPage.innerHTML = htmlString;
+
+        console.log(document.body)
+        localStorage.setItem('completeTrain', document.body)
+
+        document.getElementById('download').addEventListener('click', (e) => {
+            document.getElementById('inside').style.backgroundImage = 'none'
+            html2canvas(document.body,{
+                width: 400,
+                height: 260,
+              }).then(function (canvas) {
+                // Export canvas as a blob 
+                canvas.toBlob(function (blob) {
+                    // Generate file download
+                    window.saveAs(blob, `train_${localStorage.getItem('name')}.png`);
+                    document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/outside.png)'
+                });
+            });
+        })
 
         document.getElementById('back').addEventListener('click', (e) => {
             this.doSomething();
