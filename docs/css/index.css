@@ -40,14 +40,16 @@ body {
     INDEX
 **************/
 /*BUTTONS*/
+
+
 .buttons {
-    background-color: var(--lightorange);
+    background-color: #C77400;
     width: 60%;
     margin: auto auto 35px;
     text-align: center;
     border-radius: 7.5px;
     border: none;
-    box-shadow: 2.4px 2.4px 3.2px var(--orange);
+    box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
     padding: 5px 0;
     color: white;
 }
@@ -68,13 +70,13 @@ body {
     position: fixed;
     top: 3%;
     right: 5%;
-    background-color: var(--lightorange);
+    background-color: #C77400;
     width: auto;
     font-size: 14pt;
     margin: auto auto 35px;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 2.4px 2.4px 3.2px var(--orange);
+    box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
 }
 
 #quitButton p {
@@ -87,7 +89,7 @@ body {
     position: fixed;
     top: 3%;
     left: 5%;
-    background-color: var(--lightorange);
+    background-color: #C77400;
     width: auto;
     font-size: 14pt;
     margin: auto auto 35px;

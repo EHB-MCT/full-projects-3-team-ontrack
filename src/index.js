@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import emailjs from '@emailjs/browser';
 emailjs.init('user_24dhpAFkPLUxQNORqiHVD');
+import html2canvas from 'html2canvas';
+import { saveAs } from 'file-saver';
+
 
 "use strict";
 
@@ -1042,7 +1045,7 @@ let endOptions = {
                 <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText">  
+        <div id="lowerText" data-html2canvas-ignore>  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1071,7 +1074,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText">  
+        <div id="lowerText" data-html2canvas-ignore>  
             <div id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
@@ -1100,7 +1103,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText">  
+        <div id="lowerText" data-html2canvas-ignore>  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1129,7 +1132,7 @@ let endOptions = {
             <img src="./../img/everything_together/wheels/${wheels}.png" alt="wheels of train" id="${wheelsType}"> 
             </div>
 
-        <div id="lowerText">  
+        <div id="lowerText" data-html2canvas-ignore>  
             <div id="conducteurText">
             <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
             <div id="nameText">
@@ -1153,6 +1156,14 @@ let endOptions = {
 
         this.htmlPage.innerHTML = htmlString;
 
+        html2canvas(document.body).then(function(canvas) {
+            // Export canvas as a blob 
+            canvas.toBlob(function(blob) {
+                // Generate file download
+                window.saveAs(blob, "yourwebsite_screenshot.png");
+            });
+        });
+
         document.getElementById("yes").addEventListener('click', (e) => {
             this.takePhoto();
         })
@@ -1160,6 +1171,7 @@ let endOptions = {
         document.getElementById("no").addEventListener('click', (e) => {
             this.doSomething();
         })
+
     },
     takePhoto() {
         this.htmlPage.innerHTML = `
@@ -1335,7 +1347,7 @@ let endOptions = {
             this.print()
         })
         document.getElementById("email").addEventListener('click', (e) => {
-            this.sendPhoto("train");
+            this.sendPhoto();
         })
         document.getElementById("build").addEventListener('click', (e) => {
             document.location.href = "/docs/html/startTrain.html"
@@ -1432,7 +1444,7 @@ let endOptions = {
                 var templateParams = {
                     user_name: localStorage.getItem("name"),
                     user_email: mail,
-                    message: 'hallo'
+                    message: item
                 };
                 emailjs.send('service_sendTrain', 'sendingPicture', templateParams)
                     .then(function (response) {
