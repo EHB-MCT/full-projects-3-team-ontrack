@@ -1610,13 +1610,11 @@ let endOptions = {
 }
 
 /* Checking if your local on or github pages */
-window.onload = (e) => {
-    e.preventDefault()
-    let fileName = window.location.pathname.split("/")
-    let startingpoint = fileName[0];
-    console.log(fileName)
-    console.log(startingpoint)
-}
+let fileName = window.location.pathname.split("/")
+let startingpoint = fileName[0];
+console.log(fileName)
+console.log(startingpoint)
+
 
 
 /*https://ehb-mct.github.io/full-projects-3-team-ontrack/*/
