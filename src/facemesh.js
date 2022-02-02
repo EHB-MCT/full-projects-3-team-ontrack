@@ -1,21 +1,27 @@
 import * as tf from "@tensorflow/tfjs";
-import * as facemesh from "@tensorflow-models/facemesh"; 
-import {drawMesh} from "./utilities.js" 
+import * as facemesh from "@tensorflow-models/facemesh";
+import {
+  drawMesh
+} from "./utilities.js"
 
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas")
 
 //Start video
-function startVideo() {
-    navigator.getUserMedia({
-        video: {}
-      },
-      stream => (video.srcObject = stream),
-      err => console.error(err)
-    );
-    App();
+async function getMedia() {
+  let stream = null;
+
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: {}
+    });
+    video.srcObject = stream
+  } catch (err) {
+    console.error(err)
   }
-startVideo();
+  App()
+}
+getMedia();
 
 //Start Filter
 function App() {
@@ -32,15 +38,14 @@ function App() {
       },
       scale: 0.8
     })
-    setInterval(()=>{
+    setInterval(() => {
       detect(net)
-    },700)
+    }, 700)
   };
 
   //detect function
-  const detect = async(net) => {
-    if (typeof webcamRef !== "undefined"  && webcamRef !== null /*&&  webcamRef.current.video.readyState === 4*/
-    ) {
+  const detect = async (net) => {
+    if (typeof webcamRef !== "undefined" && webcamRef !== null /*&&  webcamRef.current.video.readyState === 4*/ ) {
       //get video properties
       const video = webcamRef;
       const videoWidth = webcamRef.width;
@@ -49,7 +54,7 @@ function App() {
       //set video width
       webcamRef.width = videoWidth;
       webcamRef.height = videoHeight;
-      
+
       //set canvas width
       canvasRef.width = videoWidth;
       canvasRef.height = videoHeight;
@@ -63,7 +68,7 @@ function App() {
       drawMesh(face, ctx)
     }
   }
- runfacemesh();
+  runfacemesh();
 }
 
 //export default App;
