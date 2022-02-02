@@ -440,6 +440,25 @@ body {
     width: 27.5%;
 }
 
+#filter {
+    position: relative;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+}
+
+#image1 {
+    position: absolute;
+    top: 0;
+}
+
 /*2ND CHOICE*/
 #choicesEnding p {
     margin-bottom: 10px;
