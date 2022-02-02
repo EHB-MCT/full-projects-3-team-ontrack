@@ -1200,7 +1200,9 @@ let endOptions = {
         <p class="buttons" id="doneFilter">Done</p>
     </div>`
 
-    document.getElementById('endTrainPageBody').insertAdjacentHTML('afterend', `<script src="../facemesh.js"></script>`)
+    let myScript = document.createElement("script");
+    myScript.setAttribute("src", "../facemesh.js");
+    document.body.appendChild(myScript);
 
         console.log('click');
         document.getElementById('doneFilter').addEventListener('click' ,(e) =>{
