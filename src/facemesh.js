@@ -10,7 +10,6 @@ const canvas = document.getElementById("canvas")
 //Start video
 async function getMedia() {
   let stream = null;
-
   try {
     stream = await navigator.mediaDevices.getUserMedia({
       video: {}
@@ -61,7 +60,6 @@ function App() {
 
       //make detections
       const face = await net.estimateFaces(video);
-      console.log(face);
 
       //get canvas context for drawing
       const ctx = canvasRef.getContext("2d");

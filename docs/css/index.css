@@ -1,11 +1,14 @@
 :root {
     --white: #ffffff;
     --darkblue: #2e345d;
-    --lightorange: #E7A35E;
+    --lightorange: #F2E5D8;
+    /*#E7A35E*/
     --lightblue: #B8D7FF;
-    --orange: #F37020;
+    --orange: #C77400;
+    /*#F37020*/
     --black: #000000;
-    --brown-orange: #d7ad85;
+    --brown-orange: #AF793F;
+    /*#d7ad85*/
 }
 
 * {
@@ -16,6 +19,7 @@
 body {
     font-family: 'Rajdhani', sans-serif;
     font-size: 26pt;
+    font-weight: bolder;
     color: var(--white);
 }
 
@@ -41,15 +45,16 @@ body {
 **************/
 /*BUTTONS*/
 .buttons {
-    background-color: #C77400;
-    width: 60%;
+    background-color: var(--orange);
+    width: 65%;
     margin: auto auto 35px;
     text-align: center;
     border-radius: 7.5px;
     border: none;
     box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
-    padding: 5px 0;
-    color: white;
+    padding: 10px 0;
+    color: var(--white);
+    font-size: 0.75em;
 }
 
 .wider {
@@ -70,12 +75,13 @@ body {
     position: fixed;
     top: 3%;
     right: 5%;
-    background-color: #C77400;
+    background-color: var(--orange);
     width: auto;
     font-size: 14pt;
     margin: auto auto 35px;
+    padding: 1%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
 }
 
@@ -89,10 +95,11 @@ body {
     position: fixed;
     top: 3%;
     left: 5%;
-    background-color: #C77400;
+    background-color: var(--orange);
     width: auto;
     font-size: 14pt;
     margin: auto auto 35px;
+    padding: 1%;
     text-align: center;
     border-radius: 5px;
     box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
@@ -160,7 +167,7 @@ body {
 
 #conducteurText p {
     font-weight: 700;
-    color: #AF793F
+    color: var(--brown-orange)
 }
 
 #nameText {
@@ -168,7 +175,7 @@ body {
     border-radius: 25px;
     padding: 12.5px 15px;
 
-    background-color: #F2E5D8;
+    background-color: var(--lightorange);
     width: 225px;
 
     color: var(--black);
@@ -191,7 +198,7 @@ body {
 .formLayout {
     background: none;
     border: none;
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px var(--white);
     padding-bottom: 5px;
     margin: auto;
     margin-bottom: 7.5vh;
@@ -295,12 +302,12 @@ body {
     width: 90%;
     padding: 0%;
     margin-top: 10vh;
-    margin-left: 6%;
+    margin-left: 11%;
 }
 
 #colours img {
-    width: 80px;
-    margin: 5px 0px;
+    width: 17.5%;
+    margin: 2% 2%;
 }
 
 /*TEXT*/
@@ -311,15 +318,16 @@ body {
     position: fixed;
     bottom: 0px;
 
-    background-color: white;
+    background-color: var(--lightorange);
     border-radius: 25px 25px 0 0;
 }
 
 #textBubble p {
-    font-size: 15pt;
-    margin-top: 10vh;
+    font-size: 0.6em;
+    height:25%;
+    margin-top: 10vh;    
     margin-bottom: 2vh;
-    color: black;
+    color: var(--brown-orange);
 }
 
 #textBubble div {
@@ -346,7 +354,7 @@ body {
 
 #choice p {
     margin: 15px 0;
-    color: white;
+    color: var(--white);
 }
 
 .myTrain {
@@ -457,6 +465,10 @@ body {
 #image1 {
     position: absolute;
     top: 0;
+}
+
+#filter {
+    height: 60vh;
 }
 
 /*2ND CHOICE*/
@@ -629,9 +641,9 @@ body {
 
 #confirmation {
     display: none;
-    background-color: #F2E5D8;
+    background-color: var(--lightorange);
     font-weight: 700;
-    color: #AF793F;
+    color: var(--orange);
     font-size: 16pt;
     margin-left: auto;
     width: 60%;

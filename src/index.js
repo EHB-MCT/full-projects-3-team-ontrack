@@ -338,7 +338,7 @@ let trainMaker = {
                 <img src="./../img/conducteur.png">
                 <div>
                     <p>
-                        Choose your locomotive
+                        Choose your <font color="#6AB0CD">locomotive</font>
                     </p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
@@ -1189,7 +1189,25 @@ let endOptions = {
 
     },
     takePhoto() {
-        this.htmlPage.innerHTML = `
+       
+        this.htmlPage.innerHTML = `    <div id="filter">
+        <video id="video" height="330" width="375" autoplay muted></video>
+        <canvas id="canvas" height="330" width="375"></canvas>
+        <img style="display: none;" id="image1" src="../img/conductor_hat.png" />
+    </div>
+    
+    <div id="textFilter">
+        <p class="buttons" id="doneFilter">Done</p>
+    </div>`
+
+    document.getElementById('endTrainPageBody').insertAdjacentHTML('afterend', `<script src="../facemesh.js"></script>`)
+
+        console.log('click');
+        document.getElementById('doneFilter').addEventListener('click' ,(e) =>{
+
+            this.doSomething();
+        })
+      /*  this.htmlPage.innerHTML = `
         <div>
             <div>
                 <p>Plaats hier de filter</p>
@@ -1206,7 +1224,7 @@ let endOptions = {
             console.log("click");
             this.optionsPhoto();
         })
-
+  */
     },
     optionsPhoto() {
         let htmlString = ``;
@@ -1653,4 +1671,9 @@ if (quitButton) {
 let endCreateTrain = document.getElementById('endCreateTrain');
 if (endCreateTrain) {
     endOptions.init()
+}
+
+let faceMesh = document.getElementById('faceMeshPage');
+if (faceMesh) {
+    endOptions.takePhoto()
 }
