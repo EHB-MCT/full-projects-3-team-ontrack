@@ -17,7 +17,7 @@ export const drawMesh = (predictions, ctx) => {
 
                 const hat = new Image();
                 hat.onload = function () {
-                    ctx.drawImage(hat, a - 220, b - 270, 140, 100);
+                    ctx.drawImage(hat, a - 250, b - 270, 140, 100);
                 }
                 hat.src = document.getElementById("image1").src;
             }
