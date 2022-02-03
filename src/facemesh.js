@@ -1,8 +1,8 @@
 import * as tf from "@tensorflow/tfjs";
 import * as facemesh from "@tensorflow-models/facemesh";
 import {
-  drawMesh
-} from "./utilities.js"
+  imag
+} from "@tensorflow/tfjs";
 
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas")
@@ -43,9 +43,9 @@ function App() {
       scale: 0.8
     })
     
-   let interval =  setInterval(() => {
+    let interval =  setInterval(() => {
       detect(net)
-    }, 700)
+    }, 800)
 
     document.getElementById('clickPhoto').addEventListener('click', (e) => {
       clearInterval(interval);
@@ -73,7 +73,9 @@ function App() {
 
       //get canvas context for drawing
       const ctx = canvasRef.getContext("2d");
+
       drawMesh(face, ctx)
+     
     }
   }
   runfacemesh();

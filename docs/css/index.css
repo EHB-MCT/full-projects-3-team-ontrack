@@ -101,7 +101,7 @@ body {
     margin: auto auto 35px;
     padding: 1%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: inset -3px -3px 10px 0px rgba(0, 0, 0, 0.295);
 }
 
@@ -243,13 +243,13 @@ body {
 #header img {
     display: block;
     padding-top: .5em;
-    width: 70%;
+    width: 75%;
 }
 
 #headerInside img {
     display: block;
     padding-top: .5em;
-    width: 70%;
+    width: 75%;
 }
 
 .cancelButton {
@@ -463,15 +463,13 @@ body {
 }
 
 #video {
-    padding-top: 2em;
     position: absolute;
-    top: 0;
+    top: 20%;
 }
 
 #canvas {
-    padding-top: 2em;
     position: absolute;
-    top: 0;
+    top: 20%;
 }
 
 #image1 {
@@ -491,12 +489,12 @@ body {
 }
 
 /*2ND CHOICE*/
-.doSomething {
+#endCreateTrain .doSomething {
     margin-top: 10%;
 }
 
 #choicesEnding p {
-    margin-bottom: 10px;
+    margin-bottom: 17.5px;
 }
 
 #choicesEnding p:first-child {

@@ -3,7 +3,7 @@ import {
 } from "@tensorflow/tfjs";
 
 // draw the hat
-export const drawMesh = (predictions, ctx, video) => {{
+export const drawMesh = (predictions, ctx) => {{
 
         predictions.forEach((prediction) => {
             const keypoints = prediction.scaledMesh;
@@ -22,4 +22,7 @@ export const drawMesh = (predictions, ctx, video) => {{
             }
         });
     }
+
+    
+    
 }
