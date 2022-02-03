@@ -290,6 +290,24 @@ body {
     right: 35px;
 }
 
+#focus {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 210px;
+    left: 45%;
+}
+
+#focus div {
+    background-color: gray;
+    width: 25px;
+    height: 10px;
+    border-radius: 25px;
+    box-sizing: content-box;
+    margin: 0 10%;
+}
+
+
 /*COLOURS*/
 #colours {
     display: flex;
@@ -489,6 +507,7 @@ body {
 #filterOptions p {
     margin-bottom: 4%;
 }
+
 #filterOptions p:first-of-type {
     margin-top: 7.5%;
 }

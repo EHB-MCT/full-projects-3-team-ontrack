@@ -157,8 +157,143 @@ let index = {
         document.getElementById('username').addEventListener('keypress', (e) => {
             if (e.key === "Enter") {
                 e.preventDefault();
+                let name = document.getElementById('username').value;
+                localStorage.setItem("name", name)
+                let language = localStorage.getItem("language");
+                if (name) {
+                    let htmlString = ``;
+                    document.getElementById('outside').innerHTML = ``;
+                    if (language == "Engels") {
+                        htmlString = ` 
+                        <div id="name">  
+                            <div id="conducteurText">
+                                <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                                <div id="nameText">
+                                <p>
+                                Nice to meet you ${name}!
+                                </p>
+                                <p>
+                                In a few minutes you will drive your first train.
+                                </p>
+                                <p>
+                                Oh but wait!
+                                </p>
+                                <p>
+                                You don't have a train yet?
+                                </p>
+                                <p>
+                                Let's build one then!
+                                </p>
+                                <p>
+                                If you are ready, press <font color="#6AB0CD">build</font>.
+                                </p>
+                                </div>
+                            </div>
+                        <div class="buttons" id="lower">
+                            <p id="build">Build</p>
+                        </div>
+                </div>`
+                    } else if (language == "Nederlands") {
+                        htmlString = ` 
+                    <div id="name">  
+                        <div id="conducteurText">
+                            <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                            <div id="nameText">
+                            <p>
+                            Leuk je te ontmoeten ${name}!
+                            </p>
+                            <p>
+                            Over een paar minuten rijdt je jouw eerste trein.
+                            </p>
+                            <p>
+                            Oh maar wacht!
+                            </p>
+                            <p>
+                            Heb je nog geen trein?
+                            </p>
+                            <p>
+                            Laten we er dan een bouwen!
+                            </p>
+                            <p>
+                            Als je klaar bent, druk op <font color="#6AB0CD">bouw</font>.
+                            </p>
+                            </div>
+                        </div>
+                    <div class="buttons" id="lower">
+                        <p id="build">Bouw</p>
+                    </div>
+            </div>`
+                    } else if (language == "Frans") {
+                        htmlString = ` 
+                    <div id="name">  
+                        <div id="conducteurText">
+                            <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                            <div id="nameText">
+                            <p>
+                            Enchanté de vous rencontrer ${name}!
+                            </p>
+                            <p>
+                            Dans quelques minutes, vous conduirez votre premier train.
+                            </p>
+                            <p>
+                            Oh mais attendez!
+                            </p>
+                            <p>
+                            Vous n'avez pas encore de train?
+                            </p>
+                            <p>
+                            Construisons-en un alors!
+                            </p>
+                            <p>
+                            Si vous êtes prêt, appuyez sur <font color="#6AB0CD">construire</font>.
+                            </p>
+                            </div>
+                        </div>
+                    <div class="buttons" id="lower">
+                        <p id="build">Construire</p>
+                    </div>
+            </div>`
+                    } else if (language == "Duits") {
+                        htmlString = ` 
+                    <div id="name">  
+                        <div id="conducteurText">
+                            <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
+                            <div id="nameText">
+                            <p>
+                            Schön, Sie kennenzulernen ${name}!
+                            </p>
+                            <p>
+                            In wenigen Minuten werden Sie Ihren ersten Zug fahren.
+                            </p>
+                            <p>
+                            Oh, aber warte!
+                            </p>
+                            <p>
+                            Sie haben noch keinen Zug?
+                            </p>
+                            <p>
+                            Dann lasst uns einen bauen!
+                            </p>
+                            <p>
+                            Wenn Sie bereit sind, drücken Sie auf <font color="#6AB0CD">Bauen</font>.
+                            </p>
+                            </div>
+                        </div>
+                    <div class="buttons" id="lower">
+                        <p id="build">Bauen</p>
+                    </div>
+            </div>`
+                    }
+                    document.getElementById('outside').innerHTML = htmlString;
+                    document.getElementById('build').addEventListener('click', (e) => {
+                        window.location.href = `/${startingpoint}/html/startTrain.html`
+                    })
+
+                }
+
             }
         })
+
         document.getElementById('formName').addEventListener('click', (e) => {
             e.preventDefault();
             let name = document.getElementById('username').value;
@@ -322,7 +457,12 @@ let trainMaker = {
                <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
                <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
                <a id="prev" class="prev"> &#10094</a>
-               <a id="next" class="next"> &#10095</a>
+               <a id="next" class="next"> &#10095</a> 
+               <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
             </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -350,6 +490,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
                <a id="next" class="next">&#10095</a>
+               <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -377,6 +522,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -404,6 +554,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -425,7 +580,9 @@ let trainMaker = {
         </div>`
         }
 
-        htmlPage.innerHTML = htmlString
+        htmlPage.innerHTML = htmlString;
+
+        document.getElementById(`focus${this.slideIndex+1}`).style.backgroundColor = "white";
 
         this.showSlide(0)
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
@@ -442,7 +599,6 @@ let trainMaker = {
         }
 
         localStorage.setItem('front', `${type}1_${this.colorFront}`)
-
 
         document.getElementById('next').addEventListener('click', (e) => {
             if (this.slideIndex == 0) {
@@ -516,6 +672,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -545,6 +706,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -574,6 +740,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -604,6 +775,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon1}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -629,6 +805,9 @@ let trainMaker = {
         }
 
         htmlPage.innerHTML = htmlString
+
+        document.getElementById(`focus${this.slideIndex+1}`).style.backgroundColor = "white";
+
         this.showSlide(0)
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
@@ -695,6 +874,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -724,6 +908,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -753,6 +942,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -783,6 +977,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wagon/O2_${this.colorWagon2}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/redwheels
@@ -808,6 +1007,9 @@ let trainMaker = {
         }
 
         htmlPage.innerHTML = htmlString
+
+        document.getElementById(`focus${this.slideIndex+1}`).style.backgroundColor = "white";
+
         this.showSlide(0)
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
@@ -874,6 +1076,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -901,6 +1108,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -928,6 +1140,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -956,6 +1173,11 @@ let trainMaker = {
             <div class="slide" id="front3"><img src="../img/wheels/O4_${this.colorWheel}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
             <a id="next" class="next"> &#10095</a>
+            <div id="focus">
+               <div id="focus1"></div>
+               <div id="focus2"></div>
+               <div id="focus3"></div>
+               </div>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -978,6 +1200,9 @@ let trainMaker = {
         }
 
         htmlPage.innerHTML = htmlString
+
+        document.getElementById(`focus${this.slideIndex+1}`).style.backgroundColor = "white";
+
         this.showSlide(0)
         document.getElementById("prev").addEventListener('click', (e) => this.changeSlide(-1))
         document.getElementById("next").addEventListener('click', (e) => this.changeSlide(1))
@@ -1434,6 +1659,81 @@ let endOptions = {
         document.getElementById('email').addEventListener('keypress', (e) => {
             if (e.key === "Enter") {
                 e.preventDefault();
+                let mail = document.getElementById('email').value
+
+                if (mail) {
+                    document.getElementById('send').style.display = "none";
+                    document.getElementById('done').style.display = "inherit";
+
+                    let language = localStorage.getItem('language')
+
+                    let message = ""
+                    let url = ""
+                    let startMessage = ""
+                    let endMessage = ""
+
+                    /*Select right message*/
+                    if (language == "Engels") {
+                        message = "With this template you can build your own train. Give it color, cut it out and fold it like a real train. Enjoy building your own train. "
+                    } else if (language == "Nederland") {
+                        message = "Met dit sjabloon kun je je eigen trein bouwen. Geef het kleur, knip het uit en vouw het als een echte trein. Veel plezier met het bouwen van je eigen trein. "
+                    } else if (language == "Frans") {
+                        message = "Avec ce modèle, tu peux construire ton propre train. Colorie-le, découpe-le et plie-le comme un vrai train. Amuse-toi à construire ton propre train."
+                    } else if (language == "Duits") {
+                        message = "Mit dieser Vorlage kannst du deinen eigenen Zug bauen. Färbe sie ein, schneide sie aus und falte sie wie einen echten Zug. Viel Spaß beim Bauen deines eigenen Zuges."
+                    }
+                    /*Select right greeting*/
+                    if (language == "Engels") {
+                        startMessage = `Hello ${localStorage.getItem('name')}`
+                    } else if (language == "Nederland") {
+                        startMessage = `Hallo ${localStorage.getItem('name')}`
+                    } else if (language == "Frans") {
+                        startMessage = `Bonjour ${localStorage.getItem('name')}`
+                    } else if (language == "Duits") {
+                        startMessage = `Hallo ${localStorage.getItem('name')}`
+                    }
+                    /*Select right goodbye*/
+                    if (language == "Engels") {
+                        endMessage = `Hope to see you again ${localStorage.getItem('name')}!`
+                    } else if (language == "Nederland") {
+                        endMessage = `Hopelijk tot ziens ${localStorage.getItem('name')}!`
+                    } else if (language == "Frans") {
+                        endMessage = `Au plaisir de vous revoir ${localStorage.getItem('name')}!`
+                    } else if (language == "Duits") {
+                        endMessage = `Ich hoffe, Sie wiederzusehen ${localStorage.getItem('name')}!`
+                    }
+
+                    /*Select right template*/
+                    if (localStorage.getItem('front').substring(0, 1) == "C") {
+                        url = "https://i.pinimg.com/564x/99/3d/ab/993dabb98762f5be552bc106fc28e68e.jpg"
+                        console.log(url);
+                    } else if (localStorage.getItem('front').substring(0, 1) == "O") {
+                        url = "https://i.pinimg.com/564x/07/74/fc/0774fc794893dce94cd38ee756c88590.jpg"
+                    } else if (localStorage.getItem('front').substring(0, 1) == "M") {
+                        url = "https://i.pinimg.com/564x/8b/35/15/8b35159ef4d236600577e3075c055e47.jpg"
+                    }
+
+                    /*Send mail*/
+                    var templateParams = {
+                        user_name: localStorage.getItem("name"),
+                        user_email: mail,
+                        image: url,
+                        message,
+                        startMessage,
+                        endMessage
+                    };
+                    emailjs.send('service_sendTrain', 'sendingPicture', templateParams)
+                        .then(function (response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                        }, function (error) {
+                            console.log('FAILED...', error);
+                        });
+
+                    /*To go back*/
+                    document.getElementById('done').addEventListener('click', (e) => {
+                        this.doSomething();
+                    })
+                }
             }
         })
 
@@ -1655,7 +1955,7 @@ if (quitButton) {
 let backButton = document.getElementById('backButton');
 if (backButton) {
     backButton.addEventListener('click', (e) => {
-        endCreateTrain.doSomething();
+        endOptions.doSomething();
     })
 }
 
