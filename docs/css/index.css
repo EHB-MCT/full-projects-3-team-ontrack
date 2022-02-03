@@ -110,9 +110,10 @@ body {
     padding: 2px 10px;
 }
 
-#nextOption{
+#nextOption {
     font-size: 6vw;
 }
+
 /*START*/
 #startPage {
     padding-top: 5.5em;
@@ -456,17 +457,17 @@ body {
 
 #video {
     position: absolute;
-    top: 20%;
+    top: 10%;
 }
 
 #canvas {
     position: absolute;
-    top: 20%;
+    top: 10%;
 }
 
 #showImageOnCanvas {
     position: absolute;
-    top: 20%;
+    top: 10%;
 }
 
 #image1 {
@@ -481,8 +482,15 @@ body {
 #clickPhoto {
     display: block;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 100px;
     width: 150px;
+}
+
+#filterOptions p {
+    margin-bottom: 4%;
+}
+#filterOptions p:first-of-type {
+    margin-top: 7.5%;
 }
 
 /*2ND CHOICE*/
@@ -598,32 +606,6 @@ body {
     width: 62%;
     left: 27.5%;
     margin-top: 7.25%;
-}
-
-/*PRINT*/
-.print {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding-top: 25%;
-}
-
-.print p {
-    font-weight: 600;
-}
-
-.print img {
-    width: 50%;
-    margin: auto;
-    margin-bottom: 5%;
-}
-
-.print img:first-of-type {
-    width: 80px;
-}
-
-.print img:last-of-type {
-    width: 75%;
 }
 
 /*EMAIL*/

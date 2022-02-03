@@ -1189,15 +1189,16 @@ let endOptions = {
 
         this.htmlPage.innerHTML = `<div id="filter">
         <canvas id="showImageOnCanvas" height="330" width="375"></canvas>
-        <video id="video" height="330" width="375" autoplay muted playsinline webkit-playsinline></video>
+        <video style="display: none;" id="video" height="330" width="375" autoplay muted playsinline webkit-playsinline data-html2canvas-ignore></video>
         <canvas id="canvas" height="330" width="375"></canvas>
-        <img style="display: none;" id="image1" src="../img/conductor_hat.png" />
+        <img style="display: none;" id="image1" src="../img/conductor_hat.png"/>
     </div>
     
     <div id="textFilter" data-html2canvas-ignore>
         <img id="clickPhoto" src="../img/camera.png" />
     </div>`
 
+        document.getElementById('video').style.display = "inherit"
         let myScript = document.createElement("script");
         myScript.setAttribute("src", "../facemesh.js");
         myScript.setAttribute("id", "facemeshScript");
@@ -1210,69 +1211,63 @@ let endOptions = {
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             document.getElementById('video').style.display = "none"
 
-            let htmlString = `<p id="yes" class="buttons">Ja</p>`
+            let htmlString = ``;
+            if (this.language == "Engels") {
+                htmlString = `
+            <div id="filterOptions">
+                    <p class="buttons" id="download">Download</p>
+                    <p class="buttons" id="again">Try again</p>
+                    <p class="buttons" id="doneFilter">Done</p>
+            </div>`
+            } else if (this.language == "Nederlands") {
+                htmlString = `
+            <div id="filterOptions">
+                    <p class="buttons" id="Download">Download</p>
+                    <p class="buttons" id="again">Opnieuw</p>
+                    <p class="buttons" id="doneFilter">Klaar</p>
+            </div>`
+            } else if (this.language == "Frans") {
+                htmlString = `
+            <div id="filterOptions">
+                    <p class="buttons" id="download">Télécharger</p>
+                    <p class="buttons" id="again">Encore une fois</p>
+                    <p class="buttons" id="doneFilter">Terminé</p>
+            </div>`
+            } else if (this.language == "Duits") {
+                htmlString = `
+            <div id="filterOptions">
+                    <p class="buttons" id="download">Herunterladen</p>
+                    <p class="buttons" id="again">Nochmals</p>
+                    <p class="buttons" id="doneFilter">Erledigt</p>
+            </div>`
+            }
 
             let test = document.getElementById('textFilter')
-            test.innerHTML = htmlString 
+            test.innerHTML = htmlString
 
-        })
-    },
-    optionsPhoto() {
-        let htmlString = ``;
-        if (this.language == "Engels") {
-            htmlString = `
-            <div>
-                <p>Plaats hier de foto</p>
-                <div>
-                    <p class="buttons" id="email">E-mail</p>
-                    <p class="buttons" id="again">Try again</p>
-                    <p class="buttons" id="done">Done</p>
-                </div>
-            </div>`
-        } else if (this.language == "Nederlands") {
-            htmlString = `
-            <div>
-                <p>Plaats hier de foto</p>
-                <div>
-                    <p class="buttons" id="email">E-mail</p>
-                    <p class="buttons" id="again">Opnieuw</p>
-                    <p class="buttons" id="done">Klaar</p>
-                </div>
-            </div>`
-        } else if (this.language == "Frans") {
-            htmlString = `
-            <div>
-                <p>Plaats hier de foto</p>
-                <div>
-                    <p class="buttons" id="email">Courriel</p>
-                    <p class="buttons" id="again">Encore une fois</p>
-                    <p class="buttons" id="done">Terminé</p>
-                </div>
-            </div>`
-        } else if (this.language == "Duits") {
-            htmlString = `
-            <div>
-                <p>Plaats hier de foto</p>
-                <div>
-                    <p class="buttons" id="email">E-mail</p>
-                    <p class="buttons" id="again">Nochmals</p>
-                    <p class="buttons" id="done">Erledigt</p>
-                </div>
-            </div>`
-        }
+            document.getElementById('again').addEventListener('click', (e) => {
+                this.takePhoto();
+            })
 
-        this.htmlPage.innerHTML = htmlString;
+            document.getElementById('doneFilter').addEventListener('click', (e) => {
+                this.doSomething();
+            })
 
-        document.getElementById("email").addEventListener('click', (e) => {
-            this.sendPhoto("photo");
-        })
+            document.getElementById('download').addEventListener('click', (e) => {
+                document.getElementById('inside').style.backgroundImage = 'none'
 
-        document.getElementById("again").addEventListener('click', (e) => {
-            this.takePhoto();
-        })
-
-        document.getElementById("done").addEventListener('click', (e) => {
-            this.doSomething();
+                html2canvas(document.body, {
+                    width: 300,
+                    height: 465,
+                }).then(function (canvas) {
+                    // Export canvas as a blob 
+                    canvas.toBlob(function (blob) {
+                        // Generate file download
+                        window.saveAs(blob, `filter_${localStorage.getItem('name')}.png`);
+                        document.getElementById('inside').style.backgroundImage = 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(./../img/inside.png)'
+                    });
+                });
+            })
         })
     },
     doSomething() {
@@ -1352,7 +1347,7 @@ let endOptions = {
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Zug herunterladen</p>
-                <p id="email" class="buttons">die Schablone senden</p>
+                <p id="email" class="buttons">Schablone senden</p>
                 <p id="build" class="buttons">Neu bauen</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
