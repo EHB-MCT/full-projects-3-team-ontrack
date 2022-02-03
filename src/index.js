@@ -95,7 +95,7 @@ let index = {
                             <img id="conducteurTiny" src="./img/conducteur.png" alt="conducteur">
                             <div id="nameText">
                                 <p>
-                                Bonjour ! Mon nom est Guido.
+                                Bonjour! Mon nom est Guido.
                                 </p>
                                 <p>
                                 Je suis le conducteur de train de Train World.
@@ -140,7 +140,7 @@ let index = {
                     <form autocomplete="off" action="submit" id="formName">
                         <input autocomplete="false" type="text" id="username" class="formLayout" placeholder="dein Name" required>
                         <div class="buttons">
-                            <p id="next">nächste</p>
+                            <p id="next">Nächste</p>
                         </div>
                     </form>
                 </div>
@@ -189,7 +189,7 @@ let index = {
                             Let's build one then!
                             </p>
                             <p>
-                            If you are ready, press <font color="#6AB0CD">Build</font>.
+                            If you are ready, press <font color="#6AB0CD">build</font>.
                             </p>
                             </div>
                         </div>
@@ -216,10 +216,10 @@ let index = {
                         Heb je nog geen trein?
                         </p>
                         <p>
-                        Laten we er dan 1 bouwen!
+                        Laten we er dan een bouwen!
                         </p>
                         <p>
-                        Als je klaar bent, druk je op <font color="#6AB0CD">bouw</font>.
+                        Als je klaar bent, druk op <font color="#6AB0CD">bouw</font>.
                         </p>
                         </div>
                     </div>
@@ -240,16 +240,16 @@ let index = {
                         Dans quelques minutes, vous conduirez votre premier train.
                         </p>
                         <p>
-                        Oh mais attendez !
+                        Oh mais attendez!
                         </p>
                         <p>
-                        Vous n'avez pas encore de train ?
+                        Vous n'avez pas encore de train?
                         </p>
                         <p>
-                        Construisons-en un alors !
+                        Construisons-en un alors!
                         </p>
                         <p>
-                        Si vous êtes prêt, appuyez sur <font color="#6AB0CD">Build</font>.
+                        Si vous êtes prêt, appuyez sur <font color="#6AB0CD">construire</font>.
                         </p>
                         </div>
                     </div>
@@ -279,12 +279,12 @@ let index = {
                         Dann lasst uns einen bauen!
                         </p>
                         <p>
-                        Wenn Sie bereit sind, drücken Sie auf <font color="#6AB0CD">Erstellen</font>.
+                        Wenn Sie bereit sind, drücken Sie auf <font color="#6AB0CD">Bauen</font>.
                         </p>
                         </div>
                     </div>
                 <div class="buttons" id="lower">
-                    <p id="build">Bauen Sie</p>
+                    <p id="build">Bauen</p>
                 </div>
         </div>`
                 }
@@ -349,7 +349,7 @@ let trainMaker = {
             <div class="slide" id="front2"><img src="../img/fronts/M1_${this.colorFront}.png"></div>
             <div class="slide" id="front3"><img src="../img/fronts/O1_${this.colorFront}.png"></div>
             <a id="prev" class="prev"> &#10094</a>
-               <a id="next" class="next"> &#10095</a>
+               <a id="next" class="next">&#10095</a>
          </div>
             <div id="colours">
                 <img id="red" src="./../img/colours/red.png">
@@ -418,7 +418,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p id="lower">Wählen Sie Ihre<font color="#6AB0CD">Lokomotive</font>.</p>
+                    <p id="lower">Wählen Sie Ihre <font color="#6AB0CD">Lokomotive</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -530,9 +530,9 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Great choice
+                    <p>Great choice!
                     <br>
-                    Choose your <font color="#6AB0CD">first wagon</font>.</p>
+                    Choose <font color="#6AB0CD">wagon 1</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -559,9 +559,9 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Goeie keuze
+                    <p>Goeie keuze!
                     <br>
-                    Kies je <font color="#6AB0CD">eerste wagon</font>.</p>
+                    Kies <font color="#6AB0CD">wagon 1</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -589,9 +589,9 @@ let trainMaker = {
                 <img src="./../img/conducteur.png">
                 <div>
                     <p>
-                    Excellent choix !
+                    Excellent choix!
                     <br>
-                    Choisissez votre <font color="#6AB0CD">premier wagon</font>.</p>
+                    Choisissez <font color="#6AB0CD">le wagon 1</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -621,7 +621,7 @@ let trainMaker = {
                     <p>
                     Gute Wahl!
                     <br>
-                    Wählen Sie Ihren <font color="#6AB0CD">ersten Waggon</font>.</p>
+                    Wählen Sie <font color="#6AB0CD">Waggon 1</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -709,9 +709,9 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Great choice
+                    <p>Great choice!
                     <br>
-                    Choose your <font color="#6AB0CD">second wagon</font>.</p>
+                    Choose <font color="#6AB0CD">wagon 2</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -738,9 +738,9 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Goeie keuze
+                    <p>Goeie keuze!
                     <br>
-                    Kies je <font color="#6AB0CD">tweede wagon</font>.</p>
+                    Kies <font color="#6AB0CD">wagon 2</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -768,9 +768,9 @@ let trainMaker = {
                 <img src="./../img/conducteur.png">
                 <div>
                     <p>
-                    Excellent choix !
+                    Excellent choix!
                     <br>
-                    Choisissez votre <font color="#6AB0CD">deuxième wagon</font>.</p>
+                    Choisissez <font color="#6AB0CD">le wagon 2</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -800,7 +800,7 @@ let trainMaker = {
                     <p>
                     Gute Wahl!
                     <br>
-                    Wählen Sie Ihren <font color="#6AB0CD">zweite Waggon</font>.</p>
+                    Wählen Sie <font color="#6AB0CD">Waggon 2</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -888,7 +888,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p id="lower">Lastly, choose your <font color="#6AB0CD">wheels</font>.</p>
+                    <p id="lower">Lastly, choose the <font color="#6AB0CD">wheels</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -915,7 +915,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p id="lower">Ten slotte, kies je <font color="#6AB0CD">wielen</font>.</p>
+                    <p id="lower">Ten slotte, kies de <font color="#6AB0CD">wielen</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -941,8 +941,10 @@ let trainMaker = {
             </div>
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
-                    <p id="lower">Enfin, choisissez vos <font color="#6AB0CD">roues</font>.</p>
+                    <div>
+                    <p id="lower">Enfin, choisissez les <font color="#6AB0CD">roues</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
+                    </div>
                 </div>
             </div>
         </div>`
@@ -968,7 +970,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p id="lower">Schließlich wählen Sie Ihre <font color="#6AB0CD">Räder</font>.</p>
+                    <p id="lower">Zuletzt wählen Sie die <font color="#6AB0CD">Räder</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -1186,6 +1188,7 @@ let endOptions = {
         document.getElementById('backButton').style.display = "inherit";
 
         this.htmlPage.innerHTML = `<div id="filter">
+        <canvas id="showImageOnCanvas" height="330" width="375"></canvas>
         <video id="video" height="330" width="375" autoplay muted playsinline webkit-playsinline></video>
         <canvas id="canvas" height="330" width="375"></canvas>
         <img style="display: none;" id="image1" src="../img/conductor_hat.png" />
@@ -1203,9 +1206,14 @@ let endOptions = {
         document.getElementById('clickPhoto').addEventListener('click', (e) => {
             let script = document.getElementById('facemeshScript');
             script.remove();
-            let canvas = document.getElementById('canvas')
+            let canvas = document.getElementById('showImageOnCanvas')
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             document.getElementById('video').style.display = "none"
+
+            let htmlString = `<p id="yes" class="buttons">Ja</p>`
+
+            let test = document.getElementById('textFilter')
+            test.innerHTML = htmlString 
 
         })
     },
@@ -1294,7 +1302,7 @@ let endOptions = {
             </div>`
         } else if (this.language == "Nederlands") {
             htmlString = `  
-            <div id="conducteurText">
+            <div class="doSomething" id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
                     <p>
@@ -1312,26 +1320,26 @@ let endOptions = {
             </div>`
         } else if (this.language == "Frans") {
             htmlString = ` 
-            <div id="conducteurText">
+            <div class="doSomething" id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
                     <p>
-                    Ce train est parfait pour vous !
+                    Ce train est parfait pour vous!
                     </p>
                     <p>
-                    Que voulez-vous faire maintenant ?
+                    Que voulez-vous faire maintenant?
                     </p>
                 </div>
             </div>
             <div id="choicesEnding">
                 <p id="preview" class="buttons">Télécharger le train</p>
-                <p id="email" class="buttons">Envoyer le modèle<</p>
+                <p id="email" class="buttons">Envoyer le modèle</p>
                 <p id="build" class="buttons">Reconstruire</p>
                 <p id="stop" class="buttons">Quit</p>
             </div>`
         } else if (this.language == "Duits") {
             htmlString = `  
-            <div id="conducteurText">
+            <div class="doSomething" id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
                     <p>
@@ -1395,7 +1403,7 @@ let endOptions = {
         <form action="submit" id="formName" class="mailForm">
             <input type="text" id="email" class="formLayout" placeholder="uw e-mail" required>
             <div>
-                    <p id="send" class="buttons">Send</p>
+                    <p id="send" class="buttons">Versturen</p>
                     <p id="done" class="buttons">Klaar</p>
             </div>
         </form>`
