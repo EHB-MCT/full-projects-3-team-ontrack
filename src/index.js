@@ -1203,8 +1203,10 @@ let endOptions = {
         document.getElementById('clickPhoto').addEventListener('click', (e) => {
             let script = document.getElementById('facemeshScript');
             script.remove();
+            let canvas = document.getElementById('canvas')
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            document.getElementById('video').style.display = "none"
 
-      
         })
     },
     optionsPhoto() {
@@ -1273,7 +1275,7 @@ let endOptions = {
 
         if (this.language == "Engels") {
             htmlString = `
-            <div id="conducteurText">
+            <div class="doSomething" id="conducteurText">
                 <img id="conducteurTiny" src="./../img/conducteur.png" alt="conducteur">
                 <div id="nameText">
                     <p>

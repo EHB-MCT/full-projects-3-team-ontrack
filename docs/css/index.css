@@ -328,7 +328,6 @@ body {
     box-sizing: border-box;
     padding-top: 2%;
     height: 8vh;
-    text-align: left;
 }
 
 #textBubble #lower {
@@ -492,6 +491,10 @@ body {
 }
 
 /*2ND CHOICE*/
+.doSomething {
+    margin-top: 10%;
+}
+
 #choicesEnding p {
     margin-bottom: 10px;
 }

@@ -14,7 +14,12 @@ async function getMedia() {
     stream = await navigator.mediaDevices.getUserMedia({
       video: {}
     });
-    video.srcObject = stream
+
+    if ('srcObject' in video) {
+      video.srcObject = stream
+    } else {
+      video.src = URL.createObjectURL(stream);
+    }
   } catch (err) {
     console.error(err)
   }
@@ -37,9 +42,14 @@ function App() {
       },
       scale: 0.8
     })
-    setInterval(() => {
+    
+   let interval =  setInterval(() => {
       detect(net)
     }, 700)
+
+    document.getElementById('clickPhoto').addEventListener('click', (e) => {
+      clearInterval(interval);
+    })
   };
 
   //detect function
