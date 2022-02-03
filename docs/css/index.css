@@ -272,8 +272,24 @@ body {
 }
 
 .slide img {
-    width: 100%;
+    width: 62.5%;
     position: block;
+
+}
+
+#front1 img {
+    margin-top: 27.5%;
+}
+
+#front2 img {
+    width: 60%;
+    margin-top: 19%;
+}
+
+#front3 img {
+    width: 57.5%;
+    margin-left: 5%;
+    margin-top: 17%;
 }
 
 .prev,
@@ -389,25 +405,24 @@ body {
 .myTrain img {
     position: absolute;
     width: 60%;
-    margin: auto;
-    margin-top: 10px;
+    margin: -5% auto;
     padding-left: 7.5px;
 }
 
 .myTrain img:nth-child(1) {
-    margin-top: 10px;
-    right: 10%;
+    margin-top: -5.5%;
+    right: 7%;
 }
 
 .myTrain img:nth-child(2) {
-    margin-top: 10px;
-    right: 10%;
+    margin-top: -5.5%;
+    right: 8%;
 }
 
 .myTrain img:nth-child(4) {
-    width: 47.5%;
-    margin-top: 14.5%;
-    right: 20%;
+    width: 60%;
+    margin-top: -6.5%;
+    right: 12.5%;
 }
 
 #lowerText {
@@ -417,49 +432,51 @@ body {
 /*POSITION TRAIN*/
 #M1 {
     width: 52.5%;
-    right: 34%;
-    margin-top: 7.5px;
+    right: 35%;
+    margin-top: -2.5%;
 }
 
 #M2 {
-    width: 45%;
-    right: 11.5%;
-    margin-top: 18px;
+    width: 55%;
+    right: 10%;
+    margin-top: -4%;
 }
 
 #M3 {
-    width: 45%;
+    width: 55%;
     right: 10%;
-    margin-top: 17px;
+    margin-top: -4.5%;
 }
 
 #M4 {
-    margin-top: 12%;
+    width: 60%;
+    right: 15%;
+    margin-top: -5.5%;
+    transform: rotate(2deg);
 }
 
 #O1 {
-    width: 57.5%;
-    margin-top: -3.5%;
-    right: 31%;
+    width: 50.5%;
+    margin-top: -3%;
+    right: 38%;
 }
 
 #O2 {
     width: 42.5%;
-    margin-top: 5%;
-    right: 13%;
+    margin-top: 2%;
+    right: 14%;
 }
 
 #O3 {
     width: 40%;
-    margin-top: 6%;
-    right: 13%;
+    margin-top: 2%;
+    right: 12%;
 }
 
 #O4 {
-    width: 55%;
-    right: 16%;
-    margin-top: 10%;
-    transform: rotate(2.5deg);
+    width: 60%;
+    right: 14%;
+    margin-top: -5.5%;
 }
 
 /*SELFIE*/
@@ -574,57 +591,57 @@ body {
 }
 
 .preview .myTrainPreview img:nth-child(4) {
-    margin-top: 11%;
+    margin-top: 6%;
     left: 32%;
     width: 55%;
 }
 
 .preview #M1 {
-    width: 61%;
-    left: 8%;
-    margin-top: -2.5%;
+    width: 57.5%;
+    left: 7%;
+    margin-top: 3%;
 }
 
 .preview #M2 {
     width: 57%;
-    left: 40%;
-    margin-top: -1%;
+    left: 35.5%;
+    margin-top: 3%;
 }
 
 .preview #M3 {
     width: 52%;
-    margin-top: 0.5%;
-    left: 45%;
+    margin-top: 4%;
+    left: 41%;
 }
 
 .preview #M4 {
     width: 67%;
-    left: 20%;
-    margin-top: 6%;
+    left: 22%;
+    margin-top: -1%
 }
 
 .preview #O1 {
-    width: 61%;
+    width: 55%;
     left: 10%;
-    margin-top: -6%;
+    margin-top: 5%;
 }
 
 .preview #O2 {
     width: 50%;
-    left: 45%;
-    margin-top: 0.5%;
+    left: 42%;
+    margin-top: 7%;
 }
 
 .preview #O3 {
     width: 47.5%;
-    margin-top: 1.5%;
-    left: 47%;
+    margin-top: 7%;
+    left: 45%;
 }
 
 .preview #O4 {
-    width: 62%;
-    left: 27.5%;
-    margin-top: 7.25%;
+    width: 65%;
+    left: 23%;
+    margin-top: 0%;
 }
 
 /*EMAIL*/
