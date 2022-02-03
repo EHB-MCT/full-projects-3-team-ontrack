@@ -57,7 +57,7 @@ let index = {
                             </div>
                         </form>
                     </div>`
-                } 
+                }
                 /*Dutch*/
                 else if (language == "Nederlands") {
                     htmlString = ` 
@@ -115,7 +115,7 @@ let index = {
                             </div>
                         </form>
                     </div>`
-                } 
+                }
                 /*German*/
                 else if (language == "Duits") {
                     htmlString = ` 
@@ -155,7 +155,7 @@ let index = {
     },
     getNameAndShowText() {
         document.getElementById('username').addEventListener('keypress', (e) => {
-            if (e.key === "Enter") {     
+            if (e.key === "Enter") {
                 e.preventDefault();
             }
         })
@@ -337,9 +337,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>
-                        Choose your <font color="#6AB0CD">locomotive</font>
-                    </p>
+                    <p id="lower">Choose your <font color="#6AB0CD">locomotive</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -366,7 +364,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Kies uw locomotief</p>
+                    <p id="lower">Kies uw <font color="#6AB0CD">locomotief</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -393,9 +391,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>
-                    Choisissez votre locomotive
-                    </p>
+                    <p id="lower">Choisissez votre <font color="#6AB0CD">locomotive</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -422,9 +418,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>
-                     Wählen Sie Ihre Lokomotive
-                    </p>
+                    <p id="lower">Wählen Sie Ihre<font color="#6AB0CD">Lokomotive</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -538,7 +532,7 @@ let trainMaker = {
                 <div>
                     <p>Great choice
                     <br>
-                    Choose your <font color="#6AB0CD">first wagon</font></p>
+                    Choose your <font color="#6AB0CD">first wagon</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -894,7 +888,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Lastly, choose your <font color="#6AB0CD">wheels</font>.</p>
+                    <p id="lower">Lastly, choose your <font color="#6AB0CD">wheels</font>.</p>
                     <button class="buttons" id="nextOption">Next</button>
                 </div>
             </div>
@@ -921,7 +915,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Ten slotte, kies je <font color="#6AB0CD">wielen</font>.</p>
+                    <p id="lower">Ten slotte, kies je <font color="#6AB0CD">wielen</font>.</p>
                     <button class="buttons" id="nextOption">Volgende</button>
                 </div>
             </div>
@@ -947,8 +941,7 @@ let trainMaker = {
             </div>
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
-            wagon
-                    <p>Enfin, choisissez vos <font color="#6AB0CD">roues</font>.</p>
+                    <p id="lower">Enfin, choisissez vos <font color="#6AB0CD">roues</font>.</p>
                     <button class="buttons" id="nextOption">Suivant</button>
                 </div>
             </div>
@@ -975,7 +968,7 @@ let trainMaker = {
             <div id="textBubble">
                 <img src="./../img/conducteur.png">
                 <div>
-                    <p>Schließlich wählen Sie Ihre <font color="#6AB0CD">Räder</font>.</p>
+                    <p id="lower">Schließlich wählen Sie Ihre <font color="#6AB0CD">Räder</font>.</p>
                     <button class="buttons" id="nextOption">Nächste</button>
                 </div>
             </div>
@@ -1189,44 +1182,30 @@ let endOptions = {
 
     },
     takePhoto() {
-       
-        this.htmlPage.innerHTML = `    <div id="filter">
-        <video id="video" height="330" width="375" autoplay muted></video>
+        document.getElementById('headerInside').style.display = "none";
+        document.getElementById('backButton').style.display = "inherit";
+
+        this.htmlPage.innerHTML = `<div id="filter">
+        <video id="video" height="330" width="375" autoplay muted playsinline webkit-playsinline></video>
         <canvas id="canvas" height="330" width="375"></canvas>
         <img style="display: none;" id="image1" src="../img/conductor_hat.png" />
     </div>
     
-    <div id="textFilter">
-        <p class="buttons" id="doneFilter">Done</p>
+    <div id="textFilter" data-html2canvas-ignore>
+        <img id="clickPhoto" src="../img/camera.png" />
     </div>`
 
-    let myScript = document.createElement("script");
-    myScript.setAttribute("src", "../facemesh.js");
-    document.body.appendChild(myScript);
+        let myScript = document.createElement("script");
+        myScript.setAttribute("src", "../facemesh.js");
+        myScript.setAttribute("id", "facemeshScript");
+        document.body.appendChild(myScript);
 
-        console.log('click');
-        document.getElementById('doneFilter').addEventListener('click' ,(e) =>{
+        document.getElementById('clickPhoto').addEventListener('click', (e) => {
+            let script = document.getElementById('facemeshScript');
+            script.remove();
 
-            this.doSomething();
+      
         })
-      /*  this.htmlPage.innerHTML = `
-        <div>
-            <div>
-                <p>Plaats hier de filter</p>
-                <img id="click" class="shot" src="./../img/camera.png" alt="Camera">
-            </div>
-            <p class="buttons smaller left" id="back">Back</p>
-        </div>`
-
-        document.getElementById('back').addEventListener('click', (e) => {
-            this.init();
-        })
-
-        document.getElementById('click').addEventListener('click', (e) => {
-            console.log("click");
-            this.optionsPhoto();
-        })
-  */
     },
     optionsPhoto() {
         let htmlString = ``;
@@ -1448,7 +1427,7 @@ let endOptions = {
         this.htmlPage.innerHTML = htmlString;
 
         document.getElementById('email').addEventListener('keypress', (e) => {
-            if (e.key === "Enter") {     
+            if (e.key === "Enter") {
                 e.preventDefault();
             }
         })
@@ -1466,7 +1445,7 @@ let endOptions = {
                 let url = ""
                 let startMessage = ""
                 let endMessage = ""
-                
+
                 /*Select right message*/
                 if (language == "Engels") {
                     message = "With this template you can build your own train. Give it color, cut it out and fold it like a real train. Enjoy building your own train. "
@@ -1481,11 +1460,11 @@ let endOptions = {
                 if (language == "Engels") {
                     startMessage = `Hello ${localStorage.getItem('name')}`
                 } else if (language == "Nederland") {
-                    startMessage =  `Hallo ${localStorage.getItem('name')}`
+                    startMessage = `Hallo ${localStorage.getItem('name')}`
                 } else if (language == "Frans") {
-                    startMessage =  `Bonjour ${localStorage.getItem('name')}`
+                    startMessage = `Bonjour ${localStorage.getItem('name')}`
                 } else if (language == "Duits") {
-                    startMessage =  `Hallo ${localStorage.getItem('name')}`
+                    startMessage = `Hallo ${localStorage.getItem('name')}`
                 }
                 /*Select right goodbye*/
                 if (language == "Engels") {
@@ -1497,7 +1476,7 @@ let endOptions = {
                 } else if (language == "Duits") {
                     endMessage = `Ich hoffe, Sie wiederzusehen ${localStorage.getItem('name')}!`
                 }
-                
+
                 /*Select right template*/
                 if (localStorage.getItem('front').substring(0, 1) == "C") {
                     url = "https://i.pinimg.com/564x/99/3d/ab/993dabb98762f5be552bc106fc28e68e.jpg"
@@ -1523,7 +1502,7 @@ let endOptions = {
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
-                    
+
                 /*To go back*/
                 document.getElementById('done').addEventListener('click', (e) => {
                     this.doSomething();
@@ -1623,8 +1602,6 @@ let endOptions = {
             document.getElementById('done').style.display = "inherit"
             document.getElementById('download').style.display = "none"
 
-            console.log('click')
-
             html2canvas(document.body, {
                 width: 400,
                 height: 260,
@@ -1667,6 +1644,13 @@ if (quitButton) {
     quitButton.addEventListener('click', (e) => {
         window.localStorage.clear();
         window.location.href = `/${startingpoint}`;
+    })
+}
+
+let backButton = document.getElementById('backButton');
+if (backButton) {
+    backButton.addEventListener('click', (e) => {
+        endCreateTrain.doSomething();
     })
 }
 

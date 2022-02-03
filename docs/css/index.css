@@ -74,7 +74,7 @@ body {
 #quitButton {
     position: fixed;
     top: 3%;
-    right: 5%;
+    right: 6%;
     background-color: var(--orange);
     width: auto;
     font-size: 14pt;
@@ -94,7 +94,7 @@ body {
     display: none;
     position: fixed;
     top: 3%;
-    left: 5%;
+    left: 6%;
     background-color: var(--orange);
     width: auto;
     font-size: 14pt;
@@ -128,7 +128,7 @@ body {
 }
 
 #conducteur {
-    width: 275px;
+    width: 260px;
     display: block;
     margin: 0 auto;
 }
@@ -160,7 +160,7 @@ body {
 #conducteurText {
     background-color: rgba(255, 255, 255, 0.293);
     margin: auto;
-    width: 75vw;
+    width: 72.5vw;
     padding: 0 0 10px;
     border-radius: 25px;
 }
@@ -302,7 +302,7 @@ body {
     width: 90%;
     padding: 0%;
     margin-top: 10vh;
-    margin-left: 11%;
+    margin-left: 10%;
 }
 
 #colours img {
@@ -323,20 +323,31 @@ body {
 }
 
 #textBubble p {
-    font-size: 0.6em;
-    height:25%;
-    margin-top: 10vh;    
-    margin-bottom: 2vh;
     color: var(--brown-orange);
+    font-size: 0.6em;
+    box-sizing: border-box;
+    padding-top: 2%;
+    height: 8vh;
+    text-align: left;
+}
+
+#textBubble #lower {
+    margin: 0;
+    padding-top: 8%;
+}
+
+#textBubble button {
+    margin: 1%;
+    margin-left: 15%;
 }
 
 #textBubble div {
     display: flex;
     flex-direction: column;
-    height: 15vh;
-    margin-left: 2.5%;
+    justify-content: space-around;
 
-    justify-content: space-evenly;
+    height: 20vh;
+    width: 65%;
 }
 
 #textBubble img {
@@ -453,11 +464,13 @@ body {
 }
 
 #video {
+    padding-top: 2em;
     position: absolute;
     top: 0;
 }
 
 #canvas {
+    padding-top: 2em;
     position: absolute;
     top: 0;
 }
@@ -469,6 +482,13 @@ body {
 
 #filter {
     height: 60vh;
+}
+
+#clickPhoto {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 150px;
 }
 
 /*2ND CHOICE*/
